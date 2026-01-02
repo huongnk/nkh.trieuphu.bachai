@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Là Triệu Phú Toán Học - GV Nguyễn Khắc Hưởng</title>
+    
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script src="cauhoi.js"></script>
+
+    <style>
+        :root {
+            --gold: #ffd700;
+            --blue-border: #3498db;
+            --orange: #e67e22;
+            --white: #ffffff;
+            --dark-blue: #020631;
+        }
+
+        body {
+            margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle, #0d1b4d 0%, var(--dark-blue) 100%);
+            color: var(--white); height: 100vh; display: flex; overflow: hidden; position: relative;
+        }
+
+        /* --- CREDIT --- */
+        .footer-credit {
+            position: absolute; bottom: 10px; left: 15px;
+            font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); z-index: 500;
+        }
+
+        /* --- LAYOUT CHÍNH --- */
+        .game-container { flex: 3; display: flex; flex-direction: column; position: relative; }
+        .money-sidebar {
+            flex: 1; background: rgba(0, 0, 0, 0.9); border-left: 2px solid var(--gold);
+            display: flex; flex-direction: column-reverse; padding: 10px 0;
+        }
+
+        /* --- HEADER 3 VÙNG CÂN ĐỐI --- */
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 40px; background: rgba(0,0,0,0.7); border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .header-left, .header-center, .header-right { flex: 1; display: flex; align-items: center; }
+        .header-left { justify-content: flex-start; gap: 10px; }
+        .header-center { justify-content: center; flex-direction: column; gap: 5px; }
+        .header-right { justify-content: flex-end; }
+
+        /* Nút trợ giúp */
+        .lifeline-btn {
+            width: 55px; height: 40px; border-radius: 20px; border: 2px solid var(--white);
+            background: linear-gradient(to bottom, #444, #000); color: var(--white);
+            cursor: pointer; font-weight: bold; font-size: 0.75rem; transition: 0.3s;
+        }
+        .lifeline-btn:hover:not(:disabled) { border-color: var(--gold); transform: scale(1.1); }
+        .lifeline-btn:disabled { opacity: 0.2; filter: grayscale(1); cursor: not-allowed; }
+
+        /* Tên người chơi và Nút Hiện lời giải */
+        #display-name { color: var(--gold); font-weight: bold; font-size: 1.1rem; text-transform: uppercase; }
+        .toggle-wrapper { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: #ccc; }
+        .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #555; transition: .4s; border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute; content: ""; height: 12px; width: 12px; left: 3px; bottom: 3px;
+            background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--orange); }
+        input:checked + .slider:before { transform: translateX(16px); }
+
+        /* Đồng hồ */
+        .timer-circle {
+            width: 60px; height: 60px; border-radius: 50%; border: 3px solid var(--gold);
+            display: flex; justify-content: center; align-items: center; font-size: 1.6rem; font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* --- KHU VỰC CÂU HỎI --- */
+        .question-section { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .question-box {
+            width: 90%; background: rgba(0,0,0,0.85); border: 2px solid var(--blue-border);
+            padding: 30px; text-align: center; font-size: 1.4rem; border-radius: 50px;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); margin-bottom: 30px;
+        }
+        .answers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 90%; }
+        .answer-btn {
+            background: rgba(0,0,0,0.7); border: 2px solid var(--blue-border);
+            padding: 18px; color: white; font-size: 1.1rem; border-radius: 40px;
+            cursor: pointer; transition: 0.3s; text-align: left; padding-left: 40px;
+        }
+        .answer-btn:hover { background: var(--orange); border-color: var(--white); }
+
+        /* --- SIDEBAR TIỀN --- */
+        .money-item { padding: 6px 25px; color: var(--orange); font-weight: bold; display: flex; justify-content: space-between; font-size: 0.9rem; }
+        .money-item.active { background: var(--orange); color: #000; border-radius: 5px; transform: scale(1.05); }
+        .money-item.milestone { color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        /* --- MODAL LỜI GIẢI, SÉC & BẮT ĐẦU --- */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            display: flex; justify-content: center; align-items: center; z-index: 2000;
+        }
+        .modal-card {
+            width: 650px; background: #fff; color: #333; border: 8px double var(--gold);
+            padding: 40px; border-radius: 10px; position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        
+        /* Tấm Séc */
+        .check-style { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); text-align: left; }
+        .check-header { border-bottom: 2px solid #333; text-align: center; font-family: 'Times New Roman', serif; margin-bottom: 20px; }
+        .amount-box { border: 3px solid #333; padding: 15px; font-size: 2.2rem; font-weight: bold; background: #eee; text-align: center; margin: 20px 0; }
+        .quote-box { font-style: italic; color: #555; text-align: center; margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 15px; }
+
+        /* Leaderboard Table */
+        .leaderboard-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .leaderboard-table th, .leaderboard-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+        .leaderboard-table th { background: #eee; }
+
+        /* Trạng thái đáp án */
+        .correct { background: #27ae60 !important; border-color: #fff !important; animation: pulse 0.5s infinite; }
+        .wrong { background: #c0392b !important; border-color: #fff !important; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+
+        .modal-btn {
+            padding: 12px 35px; background: #2c3e50; color: white; border: none;
+            border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem;
+        }
+        .modal-btn:hover { background: #34495e; }
+    </style>
+</head>
+<body>
+
+<div class="footer-credit">Được biên soạn bởi GV Nguyễn Khắc Hưởng - THPT Quế Võ số 2</div>
+
+<div id="start-screen" class="modal-overlay">
+    <div style="text-align: center;">
+        <h1 style="color:var(--gold); font-size: 3.5rem; margin-bottom: 10px;">AI LÀ TRIỆU PHÚ</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Chủ đề: Hàm số bậc hai - Toán 10 - Nguyễn Khắc Hưởng</p>
+        <input type="text" id="player-name-input" placeholder="Nhập tên người chơi..." 
+               style="padding: 15px; width: 300px; border-radius: 10px; border:none; text-align:center; font-size: 1.2rem; margin-bottom: 20px;">
+        <br>
+        <button onclick="startGame()" style="padding: 15px 60px; font-size: 1.4rem; background: var(--gold); border:none; border-radius: 50px; cursor:pointer; font-weight:bold; color:#000;">BẮT ĐẦU</button>
+        <br><br>
+        <button onclick="showLeaderboard()" style="background:none; border:1px solid var(--gold); color:var(--gold); padding:10px 25px; border-radius:20px; cursor:pointer; font-weight:bold;">🏆 Bảng xếp hạng</button>
+    </div>
+</div>
+
+<div id="leaderboard-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+        <h2 style="text-align: center; color: var(--orange); margin-top:0;">🏆 TOP 10 CAO THỦ TOÁN HỌC</h2>
+        <div id="leaderboard-loading" style="text-align:center; padding:20px;">Đang tải dữ liệu...</div>
+        <table class="leaderboard-table" id="leaderboard-table" style="display:none;">
+            <thead><tr><th>Hạng</th><th>Tên</th><th>Thưởng</th><th>Câu</th></tr></thead>
+            <tbody id="leaderboard-body"></tbody>
+        </table>
+        <div style="text-align: center; margin-top: 25px;">
+            <button onclick="document.getElementById('leaderboard-modal').style.display='none'" class="modal-btn">ĐÓNG</button>
+        </div>
+    </div>
+</div>
+
+<div id="explanation-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+        <h2 style="color: var(--blue-border); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">📚 Lời giải chi tiết</h2>
+        <div id="explanation-content" style="font-size: 1.15rem; line-height: 1.6; margin: 20px 0; max-height: 350px; overflow-y: auto;"></div>
+        <div style="text-align: right;">
+            <button onclick="closeExplanation()" class="modal-btn">TIẾP TỤC</button>
+        </div>
+    </div>
+</div>
+
+<div id="check-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card check-style">
+        <div class="check-header">
+            <h2 style="margin: 0; font-size: 1.8rem;">NGÂN HÀNG TRIỆU PHÚ TOÁN HỌC</h2>
+        </div>
+        <p style="font-size: 1.2rem;">Chúc mừng thí sinh: <b id="check-name" style="color: #d35400;"></b></p>
+        <p style="font-size: 1.1rem;">Đã xuất sắc vượt qua: <i id="check-milestone-text"></i></p>
+        <div id="check-amount" class="amount-box"></div>
+        <div id="check-quote" class="quote-box"></div>
+        
+        <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
+            <div><p style="font-size: 0.9rem; color: #888;">Số: NKH-888888-QV2</p></div>
+            <div style="text-align: center;">
+                <p style="margin: 0;">Ký tên</p>
+                <b style="font-size: 1.2rem;">MC Nguyễn Khắc Hưởng</b>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 25px;">
+            <button onclick="closeCheck()" id="check-next-btn" class="modal-btn">NHẬN THƯỞNG & TIẾP TỤC</button>
+        </div>
+    </div>
+</div>
+
+<div id="help-modal" class="modal-overlay" style="display: none;" onclick="this.style.display='none'">
+    <div class="modal-card" style="text-align: center; background: #1a1a1a; color: #fff;">
+        <div id="help-content"></div>
+    </div>
+</div>
+
+<audio id="audio-bg" src="amthanh/Nhac-nen-game-show-ai-la-trieu-phu.mp3"></audio>
+<audio id="audio-correct" src="amthanh/Am_thanh_tra_loi_dung_ai_la_trieu_phu.mp3"></audio>
+<audio id="audio-wrong" src="amthanh/Am_thanh_tra_loi_sai_ai_la_trieu_phu.mp3"></audio>
+
+<div class="game-container">
+    <div class="header">
+        <div class="header-left">
+            <button class="lifeline-btn" id="btn5050" onclick="use5050()">50:50</button>
+            <button class="lifeline-btn" id="btnCall" onclick="useCall()">📞</button>
+            <button class="lifeline-btn" id="btnAudience" onclick="useAudience()">📊</button>
+        </div>
+        <div class="header-center">
+            <div id="display-name">NGƯỜI CHƠI</div>
+            <div class="toggle-wrapper">
+                <span>Hiện lời giải:</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-explanation" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="timer-circle" id="timer">60</div>
+        </div>
+    </div>
+
+    <div class="question-section">
+        <div class="question-box" id="question-text">Đang tải câu hỏi...</div>
+        <div class="answers-grid" id="answers-container"></div>
+    </div>
+</div>
+
+<div class="money-sidebar" id="money-ladder"></div>
+
+<script>
+    // --- CẤU HÌNH WEB APP URL TỪ GOOGLE APPS SCRIPT ---
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylO49qjLQNBiQDwXaaxe8sCBK3ipyVFT9e1AU4U6k7BAXZl4NYbMp7GL1X-vdxWqUB/exec'; 
+
+    let gameQuestions = [];
+    let currentIdx = 0;
+    let timerVal = 60;
+    let timerId;
+    let playerName = "";
+    let isAnswered = false;
+
+    const moneyValues = ["200 000", "400 000", "600 000", "1 000 000", "2 000 000", "3 000 000", "6 000 000", "10 000 000", "14 000 000", "22 000 000", "30 000 000", "40 000 000", "60 000 000", "85 000 000", "150 000 000"];
+    const quotes = [
+        "Toán học là ngôn ngữ của vũ trụ. Hãy kiên trì giải mã nó!",
+        "Thành công là kết quả của sự chuẩn bị và nỗ lực không ngừng nghỉ.",
+        "Đừng lo lắng về khó khăn trong toán học, tôi đảm bảo khó khăn của tôi còn lớn hơn. - Albert Einstein",
+        "Chinh phục đỉnh cao tri thức là hành trình tuyệt vời nhất của tuổi trẻ.",
+        "Toán học không phải là những con số, mà là cách chúng ta tư duy.",
+        "Mỗi bài toán khó là một cơ hội để bộ não bạn trở nên mạnh mẽ hơn."
+    ];
+
+    function startGame() {
+        playerName = document.getElementById('player-name-input').value.trim();
+        if(!playerName) return alert("Vui lòng nhập tên của bạn!");
+        pickRandomQuestions();
+        document.getElementById('display-name').innerText = playerName;
+        document.getElementById('start-screen').style.display = 'none';
+        const bgAudio = document.getElementById('audio-bg');
+        bgAudio.volume = 0.4;
+        bgAudio.play();
+        loadQuestion();
+    }
+
+    function pickRandomQuestions() {
+        gameQuestions = [];
+        for (let i = 1; i <= 15; i++) {
+            const pool = questionPool[i];
+            const randomQ = pool[Math.floor(Math.random() * pool.length)];
+            gameQuestions.push(randomQ);
+        }
+    }
+
+    function loadQuestion() {
+        isAnswered = false;
+        renderMoney();
+        resetTimer();
+        const q = gameQuestions[currentIdx];
+        document.getElementById('question-text').innerHTML = `Câu ${currentIdx + 1}: ${q.question}`;
+        const container = document.getElementById('answers-container');
+        container.innerHTML = '';
+        q.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'answer-btn';
+            btn.innerHTML = opt;
+            btn.onclick = () => checkAnswer(opt[0], btn);
+            container.appendChild(btn);
+        });
+        if (window.MathJax) MathJax.typesetPromise();
+    }
+
+    function resetTimer() {
+        clearInterval(timerId);
+        timerVal = 60;
+        document.getElementById('timer').innerText = timerVal;
+        document.getElementById('timer').style.color = "white";
+        timerId = setInterval(() => {
+            timerVal--;
+            document.getElementById('timer').innerText = timerVal;
+            if(timerVal <= 10) document.getElementById('timer').style.color = "red";
+            if(timerVal <= 0) { clearInterval(timerId); endGame(); }
+        }, 1000);
+    }
+
+    function checkAnswer(choice, btn) {
+        if(isAnswered) return;
+        isAnswered = true;
+        clearInterval(timerId);
+        const q = gameQuestions[currentIdx];
+        const isCorrect = (choice === q.answer);
+        btn.classList.add(isCorrect ? 'correct' : 'wrong');
+        
+        if (isCorrect) document.getElementById('audio-correct').play();
+        else {
+            document.getElementById('audio-wrong').play();
+            const btns = document.querySelectorAll('.answer-btn');
+            btns.forEach(b => { if(b.innerText[0] === q.answer) b.classList.add('correct'); });
+        }
+
+        setTimeout(() => {
+            if (document.getElementById('toggle-explanation').checked) showExplanationModal(isCorrect);
+            else handlePostAnswer(isCorrect);
+        }, 2000);
+    }
+
+    function showExplanationModal(isCorrect) {
+        const q = gameQuestions[currentIdx];
+        const modal = document.getElementById('explanation-modal');
+        const content = document.getElementById('explanation-content');
+        content.innerHTML = `
+            <p style="color:#27ae60; font-weight:bold;">Đáp án chính xác: ${q.answer}</p>
+            <div style="background:#f9f9f9; padding:15px; border-radius:5px; border-left:4px solid var(--blue-border);">
+                ${q.explanation || "Đang cập nhật lời giải..."}
+            </div>
+        `;
+        modal.dataset.isCorrect = isCorrect;
+        modal.style.display = 'flex';
+        if (window.MathJax) MathJax.typesetPromise();
+    }
+
+    function closeExplanation() {
+        const isCorrect = (document.getElementById('explanation-modal').dataset.isCorrect === "true");
+        document.getElementById('explanation-modal').style.display = 'none';
+        handlePostAnswer(isCorrect);
+    }
+
+    function handlePostAnswer(isCorrect) {
+        if (!isCorrect) return endGame();
+        const qNumber = currentIdx + 1;
+        if ([5, 10, 15].includes(qNumber)) showCheck(qNumber);
+        else { currentIdx++; loadQuestion(); }
+    }
+
+    function endGame() {
+        alert(`Game Over! Bạn dừng lại ở mốc thưởng: ${currentIdx > 0 ? moneyValues[currentIdx - 1] : "0"}.`);
+        sendScoreToSheet();
+        location.reload();
+    }
+
+    function showCheck(milestone) {
+        const modal = document.getElementById('check-modal');
+        document.getElementById('check-name').innerText = playerName.toUpperCase();
+        document.getElementById('check-quote').innerText = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+        const config = {
+            5: ["Mốc quan trọng số 1 (Câu 5)", "2.000.000 VNĐ"],
+            10: ["Mốc quan trọng số 2 (Câu 10)", "22.000.000 VNĐ"],
+            15: ["ĐỈNH CAO TRIỆU PHÚ (Câu 15)", "150.000.000 VNĐ"]
+        };
+        document.getElementById('check-milestone-text').innerText = config[milestone][0];
+        document.getElementById('check-amount').innerText = config[milestone][1];
+        if(milestone === 15) {
+            document.getElementById('check-next-btn').innerText = "KẾT THÚC CHƯƠNG TRÌNH";
+            document.getElementById('check-next-btn').onclick = () => { sendScoreToSheet(); location.reload(); };
+        }
+        modal.style.display = 'flex';
+        triggerConfetti();
+    }
+
+    function closeCheck() {
+        document.getElementById('check-modal').style.display = 'none';
+        currentIdx++;
+        loadQuestion();
+    }
+
+    // --- LOGIC LEADERBOARD ---
+    function sendScoreToSheet() {
+        if (!SCRIPT_URL || SCRIPT_URL.includes('DÁN_LINK')) return;
+        const data = { name: playerName, money: currentIdx > 0 ? moneyValues[currentIdx - 1] : "0", level: currentIdx };
+        fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+    }
+
+    function showLeaderboard() {
+        const modal = document.getElementById('leaderboard-modal');
+        modal.style.display = 'flex';
+        document.getElementById('leaderboard-loading').style.display = 'block';
+        document.getElementById('leaderboard-table').style.display = 'none';
+        fetch(SCRIPT_URL)
+            .then(res => res.json())
+            .then(data => {
+                const body = document.getElementById('leaderboard-body');
+                body.innerHTML = data.map((item, idx) => `
+                    <tr><td>${idx + 1}</td><td>${item.name}</td><td>${item.money}</td><td>${item.level}</td></tr>
+                `).join('');
+                document.getElementById('leaderboard-loading').style.display = 'none';
+                document.getElementById('leaderboard-table').style.display = 'table';
+            })
+            .catch(() => {
+                document.getElementById('leaderboard-loading').innerText = "Lỗi tải dữ liệu hoặc thầy chưa dán link SCRIPT_URL!";
+            });
+    }
+
+    function triggerConfetti() {
+        const end = Date.now() + 4 * 1000;
+        const interval = setInterval(function() {
+            if (Date.now() > end) return clearInterval(interval);
+            confetti({ particleCount: 40, spread: 70, origin: { x: Math.random(), y: Math.random() - 0.2 }, zIndex: 3000 });
+        }, 250);
+    }
+
+    function renderMoney() {
+        const ladder = document.getElementById('money-ladder');
+        ladder.innerHTML = moneyValues.map((val, i) => `
+            <div class="money-item ${i === currentIdx ? 'active' : ''} ${[4,9,14].includes(i) ? 'milestone' : ''}">
+                <span>${i+1}</span><span>${val}</span>
+            </div>
+        `).join('');
+    }
+
+    function use5050() {
+        const q = gameQuestions[currentIdx];
+        const btns = Array.from(document.querySelectorAll('.answer-btn'));
+        btns.filter(b => b.innerText[0] !== q.answer).sort(() => Math.random() - 0.5).slice(0, 2).forEach(b => b.style.visibility = 'hidden');
+        document.getElementById('btn5050').disabled = true;
+    }
+    function useCall() { alert("Người thân: 'Mình tin chắc là " + gameQuestions[currentIdx].answer + "!'"); document.getElementById('btnCall').disabled = true; }
+    function useAudience() { alert("85% Khán giả chọn đáp án " + gameQuestions[currentIdx].answer); document.getElementById('btnAudience').disabled = true; }
+</script>
+</body>
+</html>
