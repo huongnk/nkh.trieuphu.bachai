@@ -23,6 +23,7 @@
             --orange: #e67e22;
             --white: #ffffff;
             --dark-blue: #020631;
+            --lifeline-bg: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
         }
 
         body {
@@ -39,12 +40,31 @@
 
         /* --- LAYOUT CHÍNH --- */
         .game-container { flex: 3; display: flex; flex-direction: column; position: relative; }
+        
         .money-sidebar {
             flex: 1; background: rgba(0, 0, 0, 0.9); border-left: 2px solid var(--gold);
-            display: flex; flex-direction: column-reverse; padding: 10px 0;
+            display: flex; flex-direction: column; padding: 10px 0;
         }
 
-        /* --- HEADER 3 VÙNG CÂN ĐỐI --- */
+        /* Logo ở Sidebar */
+        .sidebar-logo-container {
+            height: 150px; display: flex; justify-content: center; align-items: center;
+            border-bottom: 1px solid rgba(255,215,0,0.3); margin-bottom: 10px;
+        }
+        .alt-logo {
+            width: 100px; height: 100px; border-radius: 50%;
+            border: 4px double var(--gold); background: radial-gradient(circle, #2a5298, #020631);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            box-shadow: 0 0 20px var(--gold);
+        }
+        .alt-logo span { 
+            color: var(--gold); font-weight: bold; text-align: center; 
+            line-height: 1.1; text-shadow: 2px 2px #000;
+        }
+
+        .money-list { flex-grow: 1; display: flex; flex-direction: column-reverse; }
+
+        /* --- HEADER --- */
         .header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 40px; background: rgba(0,0,0,0.7); border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -54,7 +74,6 @@
         .header-center { justify-content: center; flex-direction: column; gap: 5px; }
         .header-right { justify-content: flex-end; }
 
-        /* Nút trợ giúp */
         .lifeline-btn {
             width: 55px; height: 40px; border-radius: 20px; border: 2px solid var(--white);
             background: linear-gradient(to bottom, #444, #000); color: var(--white);
@@ -63,7 +82,6 @@
         .lifeline-btn:hover:not(:disabled) { border-color: var(--gold); transform: scale(1.1); }
         .lifeline-btn:disabled { opacity: 0.2; filter: grayscale(1); cursor: not-allowed; }
 
-        /* Tên người chơi và Nút Hiện lời giải */
         #display-name { color: var(--gold); font-weight: bold; font-size: 1.1rem; text-transform: uppercase; }
         .toggle-wrapper { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: #ccc; }
         .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
@@ -79,11 +97,9 @@
         input:checked + .slider { background-color: var(--orange); }
         input:checked + .slider:before { transform: translateX(16px); }
 
-        /* Đồng hồ */
         .timer-circle {
             width: 60px; height: 60px; border-radius: 50%; border: 3px solid var(--gold);
             display: flex; justify-content: center; align-items: center; font-size: 1.6rem; font-weight: bold;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         /* --- KHU VỰC CÂU HỎI --- */
@@ -104,38 +120,36 @@
         /* --- SIDEBAR TIỀN --- */
         .money-item { padding: 6px 25px; color: var(--orange); font-weight: bold; display: flex; justify-content: space-between; font-size: 0.9rem; }
         .money-item.active { background: var(--orange); color: #000; border-radius: 5px; transform: scale(1.05); }
-        .money-item.milestone { color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .money-item.milestone { color: var(--white); border-bottom: 1px solid rgba(255,215,0,0.2); }
 
-        /* --- MODAL LỜI GIẢI, SÉC & BẮT ĐẦU --- */
+        /* --- CỬA SỔ MODAL MỚI --- */
         .modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            position: fixed; inset: 0; background: rgba(0,0,0,0.92);
             display: flex; justify-content: center; align-items: center; z-index: 2000;
         }
         .modal-card {
-            width: 650px; background: #fff; color: #333; border: 8px double var(--gold);
-            padding: 40px; border-radius: 10px; position: relative;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            width: 600px; background: #fff; color: #333; border: 8px double var(--gold);
+            padding: 35px; border-radius: 10px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
+
+        /* Chuyên nghiệp cho Trợ giúp */
+        .help-card {
+            background: var(--lifeline-bg); color: #fff; border: 4px solid var(--gold);
+            text-align: center; border-radius: 20px;
+        }
+        .audience-bar-container { display: flex; justify-content: space-around; align-items: flex-end; height: 180px; margin-top: 20px; }
+        .bar-group { display: flex; flex-direction: column; align-items: center; width: 60px; }
+        .bar { width: 40px; background: var(--gold); border-radius: 5px 5px 0 0; transition: height 1s; box-shadow: 0 0 10px var(--gold); }
         
-        /* Tấm Séc */
-        .check-style { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); text-align: left; }
-        .check-header { border-bottom: 2px solid #333; text-align: center; font-family: 'Times New Roman', serif; margin-bottom: 20px; }
+        .check-style { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
         .amount-box { border: 3px solid #333; padding: 15px; font-size: 2.2rem; font-weight: bold; background: #eee; text-align: center; margin: 20px 0; }
-        .quote-box { font-style: italic; color: #555; text-align: center; margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 15px; }
 
-        /* Leaderboard Table */
-        .leaderboard-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .leaderboard-table th, .leaderboard-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
-        .leaderboard-table th { background: #eee; }
-
-        /* Trạng thái đáp án */
-        .correct { background: #27ae60 !important; border-color: #fff !important; animation: pulse 0.5s infinite; }
+        .correct { background: #27ae60 !important; border-color: #fff !important; }
         .wrong { background: #c0392b !important; border-color: #fff !important; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
         .modal-btn {
             padding: 12px 35px; background: #2c3e50; color: white; border: none;
-            border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem;
+            border-radius: 5px; cursor: pointer; font-weight: bold;
         }
         .modal-btn:hover { background: #34495e; }
     </style>
@@ -146,24 +160,28 @@
 
 <div id="start-screen" class="modal-overlay">
     <div style="text-align: center;">
-        <h1 style="color:var(--gold); font-size: 3.5rem; margin-bottom: 10px;">AI LÀ TRIỆU PHÚ</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">Chủ đề: Hàm số bậc hai - Soạn bởi thầy Nguyễn Khắc Hưởng</p>
+        <div class="alt-logo" style="width: 180px; height: 180px; margin: 0 auto 20px;">
+            <span style="font-size: 1.5rem;">AI LÀ</span>
+            <span style="font-size: 1.2rem; color: #fff;">TRIỆU PHÚ</span>
+        </div>
+        <h1 style="color:var(--gold); font-size: 3rem; margin-bottom: 10px;">HÀM SỐ BẬC HAI</h1>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Soạn bởi thầy Nguyễn Khắc Hưởng</p>
         <input type="text" id="player-name-input" placeholder="Nhập tên người chơi..." 
-               style="padding: 15px; width: 300px; border-radius: 10px; border:none; text-align:center; font-size: 1.2rem; margin-bottom: 20px;">
+               style="padding: 15px; width: 320px; border-radius: 10px; border:none; text-align:center; font-size: 1.2rem; margin-bottom: 20px;">
         <br>
-        <button onclick="startGame()" style="padding: 15px 60px; font-size: 1.4rem; background: var(--gold); border:none; border-radius: 50px; cursor:pointer; font-weight:bold; color:#000;">BẮT ĐẦU</button>
+        <button onclick="startGame()" style="padding: 15px 60px; font-size: 1.4rem; background: var(--gold); border:none; border-radius: 50px; cursor:pointer; font-weight:bold;">BẮT ĐẦU</button>
         <br><br>
-        <button onclick="showLeaderboard()" style="background:none; border:1px solid var(--gold); color:var(--gold); padding:10px 25px; border-radius:20px; cursor:pointer; font-weight:bold;">🏆 Bảng xếp hạng</button>
+        <button onclick="showLeaderboard()" style="background:none; border:1px solid var(--gold); color:var(--gold); padding:8px 20px; border-radius:20px; cursor:pointer;">🏆 Bảng xếp hạng</button>
     </div>
 </div>
 
 <div id="leaderboard-modal" class="modal-overlay" style="display: none;">
     <div class="modal-card">
-        <h2 style="text-align: center; color: var(--orange); margin-top:0;">🏆 TOP 10 CAO THỦ TOÁN HỌC</h2>
-        <div id="leaderboard-loading" style="text-align:center; padding:20px;">Đang tải dữ liệu...</div>
-        <table class="leaderboard-table" id="leaderboard-table" style="display:none;">
-            <thead><tr><th>Hạng</th><th>Tên</th><th>Thưởng</th><th>Câu</th></tr></thead>
-            <tbody id="leaderboard-body"></tbody>
+        <h2 style="text-align: center; color: var(--orange); margin-top:0;">🏆 TOP 10 CAO THỦ</h2>
+        <div id="leaderboard-loading" style="text-align:center; padding:20px;">Đang nạp dữ liệu...</div>
+        <table class="leaderboard-table" id="leaderboard-table" style="display:none; width: 100%; border-collapse: collapse;">
+            <thead><tr style="background: #eee;"><th>Hạng</th><th>Tên</th><th>Thưởng</th><th>Câu</th></tr></thead>
+            <tbody id="leaderboard-body" style="text-align: center;"></tbody>
         </table>
         <div style="text-align: center; margin-top: 25px;">
             <button onclick="document.getElementById('leaderboard-modal').style.display='none'" class="modal-btn">ĐÓNG</button>
@@ -171,42 +189,34 @@
     </div>
 </div>
 
+<div id="lifeline-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card help-card" id="lifeline-card">
+        <h2 id="lifeline-title" style="color: var(--gold); margin-top: 0;">TRỢ GIÚP</h2>
+        <div id="lifeline-body" style="font-size: 1.3rem; margin: 20px 0;"></div>
+        <button onclick="document.getElementById('lifeline-modal').style.display='none'" class="modal-btn" style="background: var(--gold); color: #000;">XÁC NHẬN</button>
+    </div>
+</div>
+
 <div id="explanation-modal" class="modal-overlay" style="display: none;">
     <div class="modal-card">
         <h2 style="color: var(--blue-border); margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">📚 Lời giải chi tiết</h2>
-        <div id="explanation-content" style="font-size: 1.15rem; line-height: 1.6; margin: 20px 0; max-height: 350px; overflow-y: auto;"></div>
-        <div style="text-align: right;">
-            <button onclick="closeExplanation()" class="modal-btn">TIẾP TỤC</button>
-        </div>
+        <div id="explanation-content" style="font-size: 1.15rem; line-height: 1.6; margin: 20px 0; max-height: 300px; overflow-y: auto;"></div>
+        <div style="text-align: right;"><button onclick="closeExplanation()" class="modal-btn">TIẾP TỤC</button></div>
     </div>
 </div>
 
 <div id="check-modal" class="modal-overlay" style="display: none;">
     <div class="modal-card check-style">
-        <div class="check-header">
-            <h2 style="margin: 0; font-size: 1.8rem;">NGÂN HÀNG TRIỆU PHÚ TOÁN HỌC</h2>
-        </div>
-        <p style="font-size: 1.2rem;">Chúc mừng thí sinh: <b id="check-name" style="color: #d35400;"></b></p>
-        <p style="font-size: 1.1rem;">Đã xuất sắc vượt qua: <i id="check-milestone-text"></i></p>
+        <h2 style="text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px;">NGÂN HÀNG TRIỆU PHÚ TOÁN HỌC</h2>
+        <p>Chúc mừng thí sinh: <b id="check-name" style="color: #d35400;"></b></p>
+        <p>Đã xuất sắc vượt qua: <i id="check-milestone-text"></i></p>
         <div id="check-amount" class="amount-box"></div>
-        <div id="check-quote" class="quote-box"></div>
-        
-        <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
-            <div><p style="font-size: 0.9rem; color: #888;">Số: NKH-888888-QV2</p></div>
-            <div style="text-align: center;">
-                <p style="margin: 0;">Ký tên</p>
-                <b style="font-size: 1.2rem;">MC Nguyễn Khắc Hưởng</b>
-            </div>
+        <div id="check-quote" style="font-style: italic; text-align: center; color: #555;"></div>
+        <div style="margin-top: 30px; display: flex; justify-content: space-between;">
+            <span>Số: NKH-888888-QV2</span>
+            <div style="text-align: center;">Ký tên<br><b>MC Nguyễn Khắc Hưởng</b></div>
         </div>
-        <div style="text-align: center; margin-top: 25px;">
-            <button onclick="closeCheck()" id="check-next-btn" class="modal-btn">NHẬN THƯỞNG & TIẾP TỤC</button>
-        </div>
-    </div>
-</div>
-
-<div id="help-modal" class="modal-overlay" style="display: none;" onclick="this.style.display='none'">
-    <div class="modal-card" style="text-align: center; background: #1a1a1a; color: #fff;">
-        <div id="help-content"></div>
+        <div style="text-align: center; margin-top: 25px;"><button onclick="closeCheck()" id="check-next-btn" class="modal-btn">NHẬN THƯỞNG & TIẾP TỤC</button></div>
     </div>
 </div>
 
@@ -225,27 +235,28 @@
             <div id="display-name">NGƯỜI CHƠI</div>
             <div class="toggle-wrapper">
                 <span>Hiện lời giải:</span>
-                <label class="switch">
-                    <input type="checkbox" id="toggle-explanation" checked>
-                    <span class="slider"></span>
-                </label>
+                <label class="switch"><input type="checkbox" id="toggle-explanation" checked><span class="slider"></span></label>
             </div>
         </div>
-        <div class="header-right">
-            <div class="timer-circle" id="timer">60</div>
-        </div>
+        <div class="header-right"><div class="timer-circle" id="timer">60</div></div>
     </div>
-
     <div class="question-section">
         <div class="question-box" id="question-text">Đang tải câu hỏi...</div>
         <div class="answers-grid" id="answers-container"></div>
     </div>
 </div>
 
-<div class="money-sidebar" id="money-ladder"></div>
+<div class="money-sidebar">
+    <div class="sidebar-logo-container">
+        <div class="alt-logo">
+            <span style="font-size: 0.9rem;">AI LÀ</span>
+            <span style="font-size: 0.7rem; color: #fff;">TRIỆU PHÚ</span>
+        </div>
+    </div>
+    <div class="money-list" id="money-ladder"></div>
+</div>
 
 <script>
-    // --- CẤU HÌNH WEB APP URL TỪ GOOGLE APPS SCRIPT ---
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylO49qjLQNBiQDwXaaxe8sCBK3ipyVFT9e1AU4U6k7BAXZl4NYbMp7GL1X-vdxWqUB/exec'; 
 
     let gameQuestions = [];
@@ -256,23 +267,16 @@
     let isAnswered = false;
 
     const moneyValues = ["200 000", "400 000", "600 000", "1 000 000", "2 000 000", "3 000 000", "6 000 000", "10 000 000", "14 000 000", "22 000 000", "30 000 000", "40 000 000", "60 000 000", "85 000 000", "150 000 000"];
-    const quotes = [
-        "Toán học là ngôn ngữ của vũ trụ. Hãy kiên trì giải mã nó!",
-        "Thành công là kết quả của sự chuẩn bị và nỗ lực không ngừng nghỉ.",
-        "Đừng lo lắng về khó khăn trong toán học, tôi đảm bảo khó khăn của tôi còn lớn hơn. - Albert Einstein",
-        "Chinh phục đỉnh cao tri thức là hành trình tuyệt vời nhất của tuổi trẻ.",
-        "Toán học không phải là những con số, mà là cách chúng ta tư duy.",
-        "Mỗi bài toán khó là một cơ hội để bộ não bạn trở nên mạnh mẽ hơn."
-    ];
+    const quotes = ["Toán học là ngôn ngữ của vũ trụ!", "Thành công đến từ sự nỗ lực.", "Mỗi bài toán là một thử thách tư duy."];
 
     function startGame() {
         playerName = document.getElementById('player-name-input').value.trim();
-        if(!playerName) return alert("Vui lòng nhập tên của bạn!");
+        if(!playerName) return alert("Vui lòng nhập tên!");
         pickRandomQuestions();
         document.getElementById('display-name').innerText = playerName;
         document.getElementById('start-screen').style.display = 'none';
         const bgAudio = document.getElementById('audio-bg');
-        bgAudio.volume = 0.4;
+        bgAudio.volume = 0.3;
         bgAudio.play();
         loadQuestion();
     }
@@ -281,8 +285,7 @@
         gameQuestions = [];
         for (let i = 1; i <= 15; i++) {
             const pool = questionPool[i];
-            const randomQ = pool[Math.floor(Math.random() * pool.length)];
-            gameQuestions.push(randomQ);
+            gameQuestions.push(pool[Math.floor(Math.random() * pool.length)]);
         }
     }
 
@@ -324,14 +327,11 @@
         const q = gameQuestions[currentIdx];
         const isCorrect = (choice === q.answer);
         btn.classList.add(isCorrect ? 'correct' : 'wrong');
-        
         if (isCorrect) document.getElementById('audio-correct').play();
         else {
             document.getElementById('audio-wrong').play();
-            const btns = document.querySelectorAll('.answer-btn');
-            btns.forEach(b => { if(b.innerText[0] === q.answer) b.classList.add('correct'); });
+            document.querySelectorAll('.answer-btn').forEach(b => { if(b.innerText[0] === q.answer) b.classList.add('correct'); });
         }
-
         setTimeout(() => {
             if (document.getElementById('toggle-explanation').checked) showExplanationModal(isCorrect);
             else handlePostAnswer(isCorrect);
@@ -341,13 +341,7 @@
     function showExplanationModal(isCorrect) {
         const q = gameQuestions[currentIdx];
         const modal = document.getElementById('explanation-modal');
-        const content = document.getElementById('explanation-content');
-        content.innerHTML = `
-            <p style="color:#27ae60; font-weight:bold;">Đáp án chính xác: ${q.answer}</p>
-            <div style="background:#f9f9f9; padding:15px; border-radius:5px; border-left:4px solid var(--blue-border);">
-                ${q.explanation || "Đang cập nhật lời giải..."}
-            </div>
-        `;
+        document.getElementById('explanation-content').innerHTML = `<p style="color:#27ae60; font-weight:bold;">Đáp án: ${q.answer}</p><div style="background:#f9f9f9; padding:15px; border-radius:5px;">${q.explanation || "Chưa có lời giải."}</div>`;
         modal.dataset.isCorrect = isCorrect;
         modal.style.display = 'flex';
         if (window.MathJax) MathJax.typesetPromise();
@@ -397,9 +391,36 @@
         loadQuestion();
     }
 
-    // --- LOGIC LEADERBOARD ---
+    // --- TRỢ GIÚP MỚI ---
+    function use5050() {
+        const q = gameQuestions[currentIdx];
+        const btns = Array.from(document.querySelectorAll('.answer-btn'));
+        btns.filter(b => b.innerText[0] !== q.answer).sort(() => Math.random() - 0.5).slice(0, 2).forEach(b => b.style.visibility = 'hidden');
+        document.getElementById('btn5050').disabled = true;
+    }
+
+    function useCall() {
+        const q = gameQuestions[currentIdx];
+        document.getElementById('lifeline-title').innerText = "📞 GỌI ĐIỆN CHO NGƯỜI THÂN";
+        document.getElementById('lifeline-body').innerHTML = `Người thân của bạn gợi ý: <br><b style="color:var(--gold); font-size: 2rem;">"Mình tin chắc đáp án là ${q.answer}!"</b>`;
+        document.getElementById('lifeline-modal').style.display = 'flex';
+        document.getElementById('btnCall').disabled = true;
+    }
+
+    function useAudience() {
+        const q = gameQuestions[currentIdx];
+        document.getElementById('lifeline-title').innerText = "📊 Ý KIẾN KHÁN GIẢ";
+        let html = `<div class="audience-bar-container">`;
+        ["A", "B", "C", "D"].forEach(opt => {
+            let p = (opt === q.answer) ? Math.floor(Math.random()*20) + 60 : Math.floor(Math.random()*13);
+            html += `<div class="bar-group"><span style="font-size:0.8rem;">${p}%</span><div class="bar" style="height:${p*1.5}px"></div><b>${opt}</b></div>`;
+        });
+        document.getElementById('lifeline-body').innerHTML = html + `</div>`;
+        document.getElementById('lifeline-modal').style.display = 'flex';
+        document.getElementById('btnAudience').disabled = true;
+    }
+
     function sendScoreToSheet() {
-        if (!SCRIPT_URL || SCRIPT_URL.includes('DÁN_LINK')) return;
         const data = { name: playerName, money: currentIdx > 0 ? moneyValues[currentIdx - 1] : "0", level: currentIdx };
         fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
     }
@@ -407,49 +428,26 @@
     function showLeaderboard() {
         const modal = document.getElementById('leaderboard-modal');
         modal.style.display = 'flex';
-        document.getElementById('leaderboard-loading').style.display = 'block';
-        document.getElementById('leaderboard-table').style.display = 'none';
-        fetch(SCRIPT_URL)
-            .then(res => res.json())
-            .then(data => {
-                const body = document.getElementById('leaderboard-body');
-                body.innerHTML = data.map((item, idx) => `
-                    <tr><td>${idx + 1}</td><td>${item.name}</td><td>${item.money}</td><td>${item.level}</td></tr>
-                `).join('');
-                document.getElementById('leaderboard-loading').style.display = 'none';
-                document.getElementById('leaderboard-table').style.display = 'table';
-            })
-            .catch(() => {
-                document.getElementById('leaderboard-loading').innerText = "Lỗi tải dữ liệu hoặc thầy chưa dán link SCRIPT_URL!";
-            });
+        fetch(SCRIPT_URL).then(res => res.json()).then(data => {
+            document.getElementById('leaderboard-body').innerHTML = data.map((item, idx) => `<tr><td>${idx + 1}</td><td>${item.name}</td><td>${item.money}</td><td>${item.level}</td></tr>`).join('');
+            document.getElementById('leaderboard-loading').style.display = 'none';
+            document.getElementById('leaderboard-table').style.display = 'table';
+        }).catch(() => document.getElementById('leaderboard-loading').innerText = "Không thể tải dữ liệu.");
     }
 
     function triggerConfetti() {
-        const end = Date.now() + 4 * 1000;
-        const interval = setInterval(function() {
-            if (Date.now() > end) return clearInterval(interval);
-            confetti({ particleCount: 40, spread: 70, origin: { x: Math.random(), y: Math.random() - 0.2 }, zIndex: 3000 });
-        }, 250);
+        const end = Date.now() + 3000;
+        (function frame() {
+            confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 } });
+            confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 } });
+            if (Date.now() < end) requestAnimationFrame(frame);
+        }());
     }
 
     function renderMoney() {
         const ladder = document.getElementById('money-ladder');
-        ladder.innerHTML = moneyValues.map((val, i) => `
-            <div class="money-item ${i === currentIdx ? 'active' : ''} ${[4,9,14].includes(i) ? 'milestone' : ''}">
-                <span>${i+1}</span><span>${val}</span>
-            </div>
-        `).join('');
+        ladder.innerHTML = moneyValues.map((val, i) => `<div class="money-item ${i === currentIdx ? 'active' : ''} ${[4,9,14].includes(i) ? 'milestone' : ''}"><span>${i+1}</span><span>${val}</span></div>`).join('');
     }
-
-    function use5050() {
-        const q = gameQuestions[currentIdx];
-        const btns = Array.from(document.querySelectorAll('.answer-btn'));
-        btns.filter(b => b.innerText[0] !== q.answer).sort(() => Math.random() - 0.5).slice(0, 2).forEach(b => b.style.visibility = 'hidden');
-        document.getElementById('btn5050').disabled = true;
-    }
-    function useCall() { alert("Người thân: 'Mình tin chắc là " + gameQuestions[currentIdx].answer + "!'"); document.getElementById('btnCall').disabled = true; }
-    function useAudience() { alert("85% Khán giả chọn đáp án " + gameQuestions[currentIdx].answer); document.getElementById('btnAudience').disabled = true; }
 </script>
 </body>
-
 </html>
