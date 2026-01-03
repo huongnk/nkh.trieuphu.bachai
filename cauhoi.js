@@ -490,9 +490,9 @@ const questionPool = {
     5: [
         { 
             question: "Cho hàm số $y = ax^2 + bx + c$ có đồ thị mở bề lõm lên trên và đỉnh nằm ở góc phần tư thứ IV. Khẳng định nào sau đây là đúng?", 
-            options: ["A. $a > 0, b > 0, \Delta > 0$", "B. $a > 0, b < 0, \Delta > 0$", "C. $a > 0, b < 0, \Delta < 0$", "D. $a < 0, b > 0, \Delta > 0$"], 
+            options: ["A. $a > 0, b > 0, \\Delta > 0$", "B. $a > 0, b < 0, \\Delta > 0$", "C. $a > 0, b < 0, \\Delta < 0$", "D. $a < 0, b > 0, \\Delta > 0$"], 
             answer: "B", 
-            explanation: "Bề lõm lên $\Rightarrow a > 0$. Đỉnh ở góc IV $\Rightarrow x_I > 0, y_I < 0$. $x_I = -b/2a > 0 \Rightarrow b < 0$ (vì $a>0$). $y_I < 0 \Rightarrow -\Delta/4a < 0 \Rightarrow \Delta > 0$."
+            explanation: "Bề lõm lên $\\Rightarrow a > 0$. Đỉnh ở góc IV $\\Rightarrow x_I > 0, y_I < 0$. $x_I = -b/2a > 0 \\Rightarrow b < 0$ (vì $a>0$). $y_I < 0 \\Rightarrow -\\Delta/4a < 0 \\Rightarrow \\Delta > 0$."
         },
         { 
             question: "Xác định Parabol $(P): y = ax^2 + bx + 2$ đi qua điểm $A(1; 0)$ và có trục đối xứng $x = \\frac{3}{2}$.", 
@@ -528,7 +528,7 @@ const questionPool = {
             question: "Cho đồ thị hàm số $y = ax^2 + bx + c$ cắt trục hoành tại hai điểm có hoành độ dương. Khẳng định nào sau đây chắc chắn đúng?", 
             options: ["A. $a$ và $b$ cùng dấu", "B. $c < 0$", "C. $b = 0$", "D. $a$ và $b$ trái dấu"], 
             answer: "D", 
-            explanation: "Cắt tại 2 điểm hoành độ dương $\Rightarrow x_1 + x_2 = -b/a > 0 \\Rightarrow b/a < 0$. Điều này có nghĩa $a$ và $b$ phải trái dấu nhau."
+            explanation: "Cắt tại 2 điểm hoành độ dương $\\Rightarrow x_1 + x_2 = -b/a > 0 \\Rightarrow b/a < 0$. Điều này có nghĩa $a$ và $b$ phải trái dấu nhau."
         },
         { 
             question: "Một vận động viên nhảy cầu quỹ đạo là Parabol $h(x) = -0,1x^2 + 0,8x + 10$. Khoảng cách ngang $x$ lớn nhất đạt được khi chạm mặt nước ($h=0$) là:", 
@@ -594,7 +594,7 @@ const questionPool = {
             question: "Cho hàm số $y = -x^2 + 2x + 3$. Giá trị lớn nhất của hàm số trên khoảng $(-\\infty; 2]$ là:", 
             options: ["A. 3", "B. 4", "C. 0", "D. 5"], 
             answer: "B", 
-            explanation: "Đỉnh $I(1; 4)$. Vì $1 \\in (-\infty; 2]$ và $a < 0$ nên giá trị lớn nhất chính là tung độ đỉnh $y = 4$."
+            explanation: "Đỉnh $I(1; 4)$. Vì $1 \\in (-\\infty; 2]$ và $a < 0$ nên giá trị lớn nhất chính là tung độ đỉnh $y = 4$."
         },
         { 
             question: "Nếu đỉnh của Parabol $y = x^2 + bx + c$ là $I(1; 2)$ thì giá trị $b + c$ bằng:", 
@@ -736,49 +736,49 @@ const questionPool = {
             question: "Xác định Parabol $(P): y = ax^2 + bx + c$ biết $(P)$ đi qua điểm $A(2; 3)$ và có đỉnh $I(1; 2)$. Phương trình của $(P)$ là:", 
             options: ["A. $y = -x^2 + 2x + 1$", "B. $y = x^2 - 2x + 3$", "C. $y = 2x^2 - 4x + 3$", "D. $y = x^2 + 2x + 1$"], 
             answer: "B", 
-            explanation: "Dạng đỉnh $y = a(x-1)^2 + 2$. Đi qua $A(2; 3) \Rightarrow 3 = a(2-1)^2 + 2 \Rightarrow a = 1$. Vậy $y = (x-1)^2 + 2 = x^2 - 2x + 3$."
+            explanation: "Dạng đỉnh $y = a(x-1)^2 + 2$. Đi qua $A(2; 3) \\Rightarrow 3 = a(2-1)^2 + 2 \\Rightarrow a = 1$. Vậy $y = (x-1)^2 + 2 = x^2 - 2x + 3$."
         },
         { 
             question: "Cho Parabol $(P)$ cắt trục hoành tại hai điểm có hoành độ $1$ và $3$, cắt trục tung tại điểm $(0; 3)$. Tọa độ đỉnh của $(P)$ là:", 
             options: ["A. $I(2; 1)$", "B. $I(1; 0)$", "C. $I(2; -1)$", "D. $I(3; 0)$"], 
             answer: "C", 
-            explanation: "Vì $(P)$ cắt $Ox$ tại $1$ và $3$ nên có dạng $y = a(x-1)(x-3)$. Cắt $Oy$ tại $(0; 3) \Rightarrow 3 = a(-1)(-3) \Rightarrow a = 1$. Phương trình là $y = x^2 - 4x + 3$. Đỉnh $I(2; -1)$."
+            explanation: "Vì $(P)$ cắt $Ox$ tại $1$ và $3$ nên có dạng $y = a(x-1)(x-3)$. Cắt $Oy$ tại $(0; 3) \\Rightarrow 3 = a(-1)(-3) \\Rightarrow a = 1$. Phương trình là $y = x^2 - 4x + 3$. Đỉnh $I(2; -1)$."
         },
         { 
             question: "Một dây cáp cầu treo dạng Parabol có khoảng cách giữa hai trụ là $100m$, độ cao tại trụ là $20m$ và tại tâm là $5m$. Độ cao dây cáp tại điểm cách trụ $20m$ là:", 
             options: ["A. $14,6m$", "B. $10,8m$", "C. $12,5m$", "D. $15,2m$"], 
             answer: "A", 
-            explanation: "Chọn gốc tọa độ tại tâm trên mặt cầu. Parabol có đỉnh $I(0; 5)$ và qua trụ $(50; 20)$. Suy ra $y = 0,006x^2 + 5$. Tại điểm cách trụ $20m$ thì cách tâm $30m$, tức $x=30 \Rightarrow y = 0,006(30^2) + 5 = 10,4m$. (Nếu chọn trụ là gốc thì $x=20 \Rightarrow y \approx 14,6m$ tùy cách đặt trục)."
+            explanation: "Chọn gốc tọa độ tại tâm trên mặt cầu. Parabol có đỉnh $I(0; 5)$ và qua trụ $(50; 20)$. Suy ra $y = 0,006x^2 + 5$. Tại điểm cách trụ $20m$ thì cách tâm $30m$, tức $x=30 \\Rightarrow y = 0,006(30^2) + 5 = 10,4m$. (Nếu chọn trụ là gốc thì $x=20 \\Rightarrow y \\approx 14,6m$ tùy cách đặt trục)."
         },
         { 
             question: "Cho hàm số $y = x^2 - 4x + 3$. Có bao nhiêu giá trị nguyên của $y$ khi $x$ thuộc đoạn $[0; 3]$?", 
             options: ["A. 4 giá trị", "B. 5 giá trị", "C. 3 giá trị", "D. 6 giá trị"], 
             answer: "B", 
-            explanation: "Đỉnh $I(2; -1)$. Tại $x=0 \Rightarrow y=3$; tại $x=3 \Rightarrow y=0$. Trên $[0; 3]$, giá trị $y$ chạy từ thấp nhất là $-1$ đến cao nhất là $3$. Các giá trị nguyên là $\{-1; 0; 1; 2; 3\}$, tổng cộng 5 giá trị."
+            explanation: "Đỉnh $I(2; -1)$. Tại $x=0 \\Rightarrow y=3$; tại $x=3 \\Rightarrow y=0$. Trên $[0; 3]$, giá trị $y$ chạy từ thấp nhất là $-1$ đến cao nhất là $3$. Các giá trị nguyên là $\\{-1; 0; 1; 2; 3\\}$, tổng cộng 5 giá trị."
         },
         { 
             question: "Tìm $b, c$ để Parabol $y = x^2 + bx + c$ có đỉnh thuộc đường thẳng $y = x - 1$ và cắt trục tung tại $A(0; 3)$.", 
             options: ["A. $b = -2; c = 3$", "B. $b = 4; c = 3$", "C. $b = -4; c = 3$ hoặc $b = -2; c = 3$", "D. $b = -4; c = 3$"], 
             answer: "C", 
-            explanation: "Cắt $Oy$ tại $3 \Rightarrow c = 3$. Hoành độ đỉnh $x = -b/2$. Tung độ đỉnh $y = 3 - b^2/4$. Thay vào $y = x - 1 \Rightarrow 3 - b^2/4 = -b/2 - 1 \Leftrightarrow b^2 - 2b - 16 = 0$. (Dữ kiện đề bài có thể tạo ra các cặp nghiệm $b$ khác nhau)."
+            explanation: "Cắt $Oy$ tại $3 \\Rightarrow c = 3$. Hoành độ đỉnh $x = -b/2$. Tung độ đỉnh $y = 3 - b^2/4$. Thay vào $y = x - 1 \\Rightarrow 3 - b^2/4 = -b/2 - 1 \\Leftrightarrow b^2 - 2b - 16 = 0$. (Dữ kiện đề bài có thể tạo ra các cặp nghiệm $b$ khác nhau)."
         },
         { 
             question: "Đường thẳng $d: y = x + m$ tiếp xúc với Parabol $(P): y = x^2 - 2x + 3$ khi giá trị của $m$ là:", 
             options: ["A. $m = 2,75$", "B. $m = 1,25$", "C. $m = 0,75$", "D. $m = 2,25$"], 
             answer: "C", 
-            explanation: "Phương trình hoành độ: $x^2 - 3x + 3 - m = 0$. Tiếp xúc khi $\Delta = (-3)^2 - 4(3-m) = 0 \Leftrightarrow 9 - 12 + 4m = 0 \Leftrightarrow m = 3/4 = 0,75$."
+            explanation: "Phương trình hoành độ: $x^2 - 3x + 3 - m = 0$. Tiếp xúc khi $\\Delta = (-3)^2 - 4(3-m) = 0 \\Leftrightarrow 9 - 12 + 4m = 0 \\Leftrightarrow m = 3/4 = 0,75$."
         },
         { 
             question: "Diện tích lớn nhất của hình chữ nhật nội tiếp trong một tam giác vuông có hai cạnh góc vuông $6cm$ và $8cm$ (một cạnh nằm trên cạnh huyền) là:", 
             options: ["A. $12 cm^2$", "B. $24 cm^2$", "C. $10 cm^2$", "D. $14 cm^2$"], 
             answer: "A", 
-            explanation: "Sử dụng tính chất tam giác đồng dạng, diện tích hình chữ nhật lớn nhất luôn bằng một nửa diện tích tam giác vuông: $S = \frac{1}{2} \cdot (\frac{1}{2} \cdot 6 \cdot 8) = 12 cm^2$."
+            explanation: "Sử dụng tính chất tam giác đồng dạng, diện tích hình chữ nhật lớn nhất luôn bằng một nửa diện tích tam giác vuông: $S = \\frac{1}{2} \\cdot (\\frac{1}{2} \\cdot 6 \\cdot 8) = 12 cm^2$."
         },
         { 
             question: "Xác định hàm số $y = ax^2 + bx + c$ biết đồ thị đi qua điểm $A(1; 0)$ và có đỉnh $I(-1; -4)$.", 
             options: ["A. $y = x^2 - 2x - 3$", "B. $y = x^2 + 2x - 3$", "C. $y = 2x^2 + 4x - 6$", "D. $y = x^2 + 2x + 1$"], 
             answer: "B", 
-            explanation: "Dạng đỉnh $y = a(x+1)^2 - 4$. Qua $A(1; 0) \Rightarrow 0 = a(1+1)^2 - 4 \Rightarrow 4a = 4 \Rightarrow a = 1$. Vậy $y = (x+1)^2 - 4 = x^2 + 2x - 3$."
+            explanation: "Dạng đỉnh $y = a(x+1)^2 - 4$. Qua $A(1; 0) \\Rightarrow 0 = a(1+1)^2 - 4 \\Rightarrow 4a = 4 \\Rightarrow a = 1$. Vậy $y = (x+1)^2 - 4 = x^2 + 2x - 3$."
         },
         { 
             question: "Tìm giá trị lớn nhất của biểu thức $P = |x^2 - 4x + 3|$ trên đoạn $[0; 4]$.", 
@@ -790,7 +790,7 @@ const questionPool = {
             question: "Xác định các hệ số $a, b$ để Parabol $y = ax^2 + bx + 1$ đi qua hai điểm $A(1; 2)$ và $B(-1; 6)$.", 
             options: ["A. $a = 2, b = -2$", "B. $a = 1, b = 1$", "C. $a = 3, b = -2$", "D. $a = 2, b = 2$"], 
             answer: "C", 
-            explanation: "Thay tọa độ $A: a + b + 1 = 2 \Leftrightarrow a + b = 1$. Thay tọa độ $B: a - b + 1 = 6 \Leftrightarrow a - b = 5$. Giải hệ phương trình ta được $a = 3, b = -2$."
+            explanation: "Thay tọa độ $A: a + b + 1 = 2 \\Leftrightarrow a + b = 1$. Thay tọa độ $B: a - b + 1 = 6 \\Leftrightarrow a - b = 5$. Giải hệ phương trình ta được $a = 3, b = -2$."
         },
         { 
             question: "Cho đồ thị hàm số $y = ax^2 + bx + c$ có $a < 0, b > 0, c > 0$. Trục đối xứng của Parabol này nằm ở:", 
@@ -800,57 +800,57 @@ const questionPool = {
         },
         { 
             question: "Một hầm đường bộ mặt cắt là Parabol cao $5m$, rộng $10m$. Chiều rộng tối đa của xe tải cao $3m$ có thể đi qua hầm là:", 
-            options: ["A. $4m$", "B. $2\sqrt{10}m$", "C. $5m$", "D. $6m$"], 
+            options: ["A. $4m$", "B. $2\\sqrt{10}m$", "C. $5m$", "D. $6m$"], 
             answer: "B", 
-            explanation: "Hàm $y = -0,2x^2 + 5$ (với $x \in [-5, 5]$). Xe cao $3m \Rightarrow 3 = -0,2x^2 + 5 \Rightarrow 0,2x^2 = 2 \Rightarrow x^2 = 10 \Rightarrow x = \pm \sqrt{10}$. Chiều rộng xe là $2\sqrt{10}m$."
+            explanation: "Hàm $y = -0,2x^2 + 5$ (với $x \\in [-5, 5]$). Xe cao $3m \\Rightarrow 3 = -0,2x^2 + 5 \\Rightarrow 0,2x^2 = 2 \\Rightarrow x^2 = 10 \\Rightarrow x = \\pm \\sqrt{10}$. Chiều rộng xe là $2\\sqrt{10}m$."
         },
         { 
             question: "Tìm $c$ để Parabol $y = x^2 - 4x + c$ cắt trục hoành tại $A, B$ sao cho $OA = 3OB$ (biết $A, B$ cùng phía với gốc $O$).", 
             options: ["A. $c = 3$", "B. $c = 4$", "C. $c = -3$", "D. $c = 1$"], 
             answer: "A", 
-            explanation: "Cùng phía nên $x_1 = 3x_2$. Theo Vi-ét $x_1+x_2=4 \Rightarrow 4x_2=4 \Rightarrow x_2=1, x_1=3$. Khi đó $c = x_1 \cdot x_2 = 3$."
+            explanation: "Cùng phía nên $x_1 = 3x_2$. Theo Vi-ét $x_1+x_2=4 \\Rightarrow 4x_2=4 \\Rightarrow x_2=1, x_1=3$. Khi đó $c = x_1 \\cdot x_2 = 3$."
         },
         { 
             question: "Cho hàm số $y = f(x) = x^2 - 2x$. Giá trị nhỏ nhất của hàm số hợp $g(x) = f(x^2 + 1)$ là:", 
             options: ["A. 0", "B. -1", "C. 1", "D. 2"], 
             answer: "A", 
-            explanation: "Đặt $t = x^2 + 1 \geq 1$. Ta tìm GTNN của $f(t) = t^2 - 2t$ trên $[1, +\infty)$. Đỉnh tại $t=1 \Rightarrow f(1) = 1 - 2 = -1$. Tuy nhiên, với $t \geq 1$ thì giá trị thấp nhất là $f(1) = -1$. (Xem xét lại các đáp án)."
+            explanation: "Đặt $t = x^2 + 1 \\geq 1$. Ta tìm GTNN của $f(t) = t^2 - 2t$ trên $[1, +\\infty)$. Đỉnh tại $t=1 \\Rightarrow f(1) = 1 - 2 = -1$. Tuy nhiên, với $t \\geq 1$ thì giá trị thấp nhất là $f(1) = -1$. (Xem xét lại các đáp án)."
         },
         { 
             question: "Số giao điểm của Parabol $y = x^2 - 2x + 2$ với đường thẳng phân giác góc phần tư thứ nhất $y = x$ là:", 
             options: ["A. 2 giao điểm", "B. 1 giao điểm", "C. Không có giao điểm", "D. 3 giao điểm"], 
             answer: "A", 
-            explanation: "PT hoành độ: $x^2 - 3x + 2 = 0 \Leftrightarrow x=1, x=2$. Có 2 nghiệm phân biệt nên có 2 giao điểm."
+            explanation: "PT hoành độ: $x^2 - 3x + 2 = 0 \\Leftrightarrow x=1, x=2$. Có 2 nghiệm phân biệt nên có 2 giao điểm."
         },
         { 
             question: "Hàm số đạt giá trị lớn nhất là $4$ tại $x=1$ và đi qua $M(0; 3)$ là:", 
             options: ["A. $y = x^2 - 2x + 4$", "B. $y = -x^2 - 2x + 3$", "C. $y = -x^2 + 2x + 3$", "D. $y = -2x^2 + 4x + 3$"], 
             answer: "C", 
-            explanation: "Đỉnh $I(1; 4) \Rightarrow y = a(x-1)^2 + 4$. Qua $M(0; 3) \Rightarrow 3 = a + 4 \Rightarrow a = -1$. Vậy $y = -x^2 + 2x + 3$."
+            explanation: "Đỉnh $I(1; 4) \\Rightarrow y = a(x-1)^2 + 4$. Qua $M(0; 3) \\Rightarrow 3 = a + 4 \\Rightarrow a = -1$. Vậy $y = -x^2 + 2x + 3$."
         },
         { 
             question: "Tìm $m$ để đường thẳng $y = x + m$ cắt Parabol $y = x^2 - x + 1$ tại hai điểm phân biệt.", 
             options: ["A. $m > -1$", "B. $m < 0$", "C. $m = 0$", "D. $m > 0$"], 
             answer: "D", 
-            explanation: "PT hoành độ: $x^2 - 2x + 1 - m = 0$. Có 2 nghiệm phân biệt khi $\Delta' = 1 - (1-m) > 0 \Leftrightarrow m > 0$."
+            explanation: "PT hoành độ: $x^2 - 2x + 1 - m = 0$. Có 2 nghiệm phân biệt khi $\\Delta' = 1 - (1-m) > 0 \\Leftrightarrow m > 0$."
         },
         { 
             question: "Tìm giá trị nguyên của $m$ để đường thẳng $y = m$ cắt $y = x^2 - 4x + 3$ tại hai điểm có hoành độ dương.", 
-            options: ["A. $m \in \{-1; 0; 1; 2\}$", "B. $m \in \{0; 1; 2\}$", "C. $m \in \{-1; 0; 1\}$", "D. $m > -1$"], 
+            options: ["A. $m \\in \\{-1; 0; 1; 2\\}$", "B. $m \\in \\{0; 1; 2\\}$", "C. $m \\in \\{-1; 0; 1\\}$", "D. $m > -1$"], 
             answer: "A", 
-            explanation: "Đỉnh tại $x=2, y=-1$. Tại $x=0 \Rightarrow y=3$. Để cắt tại 2 điểm có $x>0$ thì tung độ $m$ phải nằm từ đỉnh đến giá trị tại trục tung: $-1 < m < 3$."
+            explanation: "Đỉnh tại $x=2, y=-1$. Tại $x=0 \\Rightarrow y=3$. Để cắt tại 2 điểm có $x>0$ thì tung độ $m$ phải nằm từ đỉnh đến giá trị tại trục tung: $-1 < m < 3$."
         },
         { 
             question: "Hoành độ các giao điểm của Parabol $y = x^2 - 3x + 2$ và đường thẳng $y = 2x - 4$ là:", 
             options: ["A. 1 và 4", "B. 2 và 3", "C. 0 và 5", "D. 2 và 4"], 
             answer: "B", 
-            explanation: "PT hoành độ: $x^2 - 5x + 6 = 0 \Leftrightarrow x=2$ hoặc $x=3$."
+            explanation: "PT hoành độ: $x^2 - 5x + 6 = 0 \\Leftrightarrow x=2$ hoặc $x=3$."
         },
         { 
             question: "Tập giá trị của hàm số $y = x^2 - 2x + 3$ trên khoảng $(1; 3)$ là:", 
             options: ["A. $[2; 6]$", "B. $(3; 6)$", "C. $(2; 6)$", "D. $(2; 3)$"], 
             answer: "C", 
-            explanation: "Đỉnh tại $x=1, y=2$. Tại $x=3 \Rightarrow y=6$. Vì $1$ là đầu mút khoảng nên $y$ chạy từ sát $2$ đến sát $6$."
+            explanation: "Đỉnh tại $x=1, y=2$. Tại $x=3 \\Rightarrow y=6$. Vì $1$ là đầu mút khoảng nên $y$ chạy từ sát $2$ đến sát $6$."
         }
     ],
     8: [
@@ -858,85 +858,85 @@ const questionPool = {
             question: "Một chiếc dây cáp của cầu treo có dạng Parabol. Khoảng cách giữa hai tháp là $200m$, chiều cao của tháp là $30m$ và điểm thấp nhất của dây cáp cách mặt cầu $5m$. Xác định độ cao của dây cáp tại điểm cách tháp $50m$.", 
             options: ["A. $11,25m$", "B. $15,5m$", "C. $18,75m$", "D. $12,5m$"], 
             answer: "A", 
-            explanation: "Chọn gốc tọa độ tại điểm thấp nhất của dây cáp, trục $Oy$ là trục đối xứng. Parabol có dạng $y = ax^2$. Điểm thấp nhất cách mặt cầu $5m$, tháp cao $30m$ nên đỉnh tháp có tung độ $y = 30 - 5 = 25$. Tọa độ tháp là $(100; 25) \Rightarrow 25 = a \cdot 100^2 \Rightarrow a = 0,0025$. Tại điểm cách tháp $50m$ thì cách tâm $50m \Rightarrow x = 50, y = 0,0025 \cdot 50^2 = 6,25$. Độ cao so với mặt cầu là $6,25 + 5 = 11,25m$."
+            explanation: "Chọn gốc tọa độ tại điểm thấp nhất của dây cáp, trục $Oy$ là trục đối xứng. Parabol có dạng $y = ax^2$. Điểm thấp nhất cách mặt cầu $5m$, tháp cao $30m$ nên đỉnh tháp có tung độ $y = 30 - 5 = 25$. Tọa độ tháp là $(100; 25) \\Rightarrow 25 = a \\cdot 100^2 \\Rightarrow a = 0,0025$. Tại điểm cách tháp $50m$ thì cách tâm $50m \\Rightarrow x = 50, y = 0,0025 \\cdot 50^2 = 6,25$. Độ cao so với mặt cầu là $6,25 + 5 = 11,25m$."
         },
         { 
             question: "Cho hàm số $y = ax^2 + bx + c$ có đồ thị đi qua $A(0; 3)$ và tiếp xúc với đường thẳng $y = x - 1$ tại điểm $M(2; 1)$. Giá trị của biểu thức $a + b + c$ là:", 
             options: ["A. $1,5$", "B. $0,5$", "C. $1,25$", "D. $2$"], 
             answer: "B", 
-            explanation: "Qua $A(0; 3) \Rightarrow c = 3$. Qua $M(2; 1) \Rightarrow 4a + 2b + 3 = 1 \Leftrightarrow 2a + b = -1$. Tiếp xúc với $y = x - 1$ tại $x = 2$ nghĩa là phương trình $ax^2 + (b-1)x + 4 = 0$ có nghiệm kép $x = 2$. Theo Vi-ét $x_1+x_2 = -(b-1)/a = 4 \Rightarrow b - 1 = -4a \Rightarrow b + 4a = 1$. Giải hệ được $a = 1, b = -3$. Khi đó $a+b+c = 1 - 3 + 3 = 1$ (Kiểm tra lại tính toán: $a=1, b=-3, c=3 \Rightarrow a+b+c=1$)."
+            explanation: "Qua $A(0; 3) \\Rightarrow c = 3$. Qua $M(2; 1) \\Rightarrow 4a + 2b + 3 = 1 \\Leftrightarrow 2a + b = -1$. Tiếp xúc với $y = x - 1$ tại $x = 2$ nghĩa là phương trình $ax^2 + (b-1)x + 4 = 0$ có nghiệm kép $x = 2$. Theo Vi-ét $x_1+x_2 = -(b-1)/a = 4 \\Rightarrow b - 1 = -4a \\Rightarrow b + 4a = 1$. Giải hệ được $a = 1, b = -3$. Khi đó $a+b+c = 1 - 3 + 3 = 1$ (Kiểm tra lại tính toán: $a=1, b=-3, c=3 \\Rightarrow a+b+c=1$)."
         },
         { 
             question: "Tìm giá trị của $a$ để hàm số $y = ax^2 - 4x + c$ đạt giá trị lớn nhất bằng $10$ tại $x = -2$.", 
             options: ["A. $a = 1$", "B. $a = -0,5$", "C. $a = -2$", "D. $a = -1$"], 
             answer: "D", 
-            explanation: "Hàm số đạt cực trị tại $x = -b/2a \Rightarrow -2 = -(-4)/2a \Rightarrow -4a = 4 \Rightarrow a = -1$. Vì đạt giá trị lớn nhất nên $a < 0$ (thỏa mãn)."
+            explanation: "Hàm số đạt cực trị tại $x = -b/2a \\Rightarrow -2 = -(-4)/2a \\Rightarrow -4a = 4 \\Rightarrow a = -1$. Vì đạt giá trị lớn nhất nên $a < 0$ (thỏa mãn)."
         },
         { 
             question: "Một cổng chào hình Parabol có chiều rộng chân cổng là $8m$. Một điểm trên cổng cách chân cổng $2m$ theo phương ngang thì có độ cao $3m$. Chiều cao tối đa của cổng chào đó là:", 
             options: ["A. $4m$", "B. $5m$", "C. $6m$", "D. $4,5m$"], 
             answer: "A", 
-            explanation: "Chọn gốc tọa độ tại chân cổng trái $(0;0)$, chân kia là $(8;0)$. Parabol $y = ax(x-8)$. Điểm $(2; 3)$ thuộc đồ thị $\Rightarrow 3 = a \cdot 2 \cdot (2-8) \Rightarrow 3 = -12a \Rightarrow a = -1/4$. Chiều cao tối đa tại đỉnh $x = 4 \Rightarrow y = -1/4 \cdot 4 \cdot (4-8) = 4m$."
+            explanation: "Chọn gốc tọa độ tại chân cổng trái $(0;0)$, chân kia là $(8;0)$. Parabol $y = ax(x-8)$. Điểm $(2; 3)$ thuộc đồ thị $\\Rightarrow 3 = a \\cdot 2 \\cdot (2-8) \\Rightarrow 3 = -12a \\Rightarrow a = -1/4$. Chiều cao tối đa tại đỉnh $x = 4 \\Rightarrow y = -1/4 \\cdot 4 \\cdot (4-8) = 4m$."
         },
         { 
             question: "Cho hàm số $f(x) = x^2 - 2x + 3$. Có bao nhiêu giá trị nguyên của $x$ thuộc đoạn $[-2; 5]$ để giá trị $f(x)$ nằm trong khoảng $(3; 11)$?", 
             options: ["A. 4 giá trị", "B. 3 giá trị", "C. 5 giá trị", "D. 2 giá trị"], 
             answer: "A", 
-            explanation: "Giải $3 < x^2 - 2x + 3 < 11$. Bế trái: $x^2 - 2x > 0 \Rightarrow x < 0$ hoặc $x > 2$. Vế phải: $x^2 - 2x - 8 < 0 \Rightarrow -2 < x < 4$. Kết hợp điều kiện và $x \in [-2; 5]$, ta được $x \in (-2; 0) \cup (2; 4)$. Các giá trị nguyên là $x \in \{-1; 3\}$. (Kiểm tra lại số lượng: có 2 giá trị nguyên)."
+            explanation: "Giải $3 < x^2 - 2x + 3 < 11$. Bế trái: $x^2 - 2x > 0 \\Rightarrow x < 0$ hoặc $x > 2$. Vế phải: $x^2 - 2x - 8 < 0 \\Rightarrow -2 < x < 4$. Kết hợp điều kiện và $x \\in [-2; 5]$, ta được $x \\in (-2; 0) \\cup (2; 4)$. Các giá trị nguyên là $x \\in \\{-1; 3\\}$. (Kiểm tra lại số lượng: có 2 giá trị nguyên)."
         },
         { 
             question: "Xác định Parabol $(P): y = ax^2 + bx + c$ biết nó đi qua điểm $A(2; 1)$ và có đỉnh là $I(1; -1)$.", 
             options: ["A. $y = 2x^2 - 4x + 1$", "B. $y = 2x^2 - 4x + 3$", "C. $y = x^2 - 2x$", "D. $y = -2x^2 + 4x - 1$"], 
             answer: "A", 
-            explanation: "Dạng đỉnh $y = a(x-1)^2 - 1$. Đi qua $A(2; 1) \Rightarrow 1 = a(2-1)^2 - 1 \Rightarrow a = 2$. Vậy $y = 2(x-1)^2 - 1 = 2x^2 - 4x + 1$."
+            explanation: "Dạng đỉnh $y = a(x-1)^2 - 1$. Đi qua $A(2; 1) \\Rightarrow 1 = a(2-1)^2 - 1 \\Rightarrow a = 2$. Vậy $y = 2(x-1)^2 - 1 = 2x^2 - 4x + 1$."
         },
         { 
             question: "Một quả bóng được đá từ mặt đất lên cao với vận tốc ban đầu $v_0 = 20 m/s$. Độ cao $h$ (mét) sau $t$ (giây) là $h(t) = -5t^2 + 20t$. Quả bóng ở độ cao trên $15m$ trong khoảng thời gian bao lâu?", 
             options: ["A. 1 giây", "B. 2 giây", "C. 1,5 giây", "D. 3 giây"], 
             answer: "B", 
-            explanation: "Giải bất phương trình $-5t^2 + 20t > 15 \Leftrightarrow t^2 - 4t + 3 < 0 \Leftrightarrow 1 < t < 3$. Khoảng thời gian là $3 - 1 = 2$ giây."
+            explanation: "Giải bất phương trình $-5t^2 + 20t > 15 \\Leftrightarrow t^2 - 4t + 3 < 0 \\Leftrightarrow 1 < t < 3$. Khoảng thời gian là $3 - 1 = 2$ giây."
         },
         { 
             question: "Cho Parabol $(P): y = x^2 - 4x + 3$. Một đường thẳng $d$ đi qua điểm $A(0; 1)$ và có hệ số góc $k$. Tìm $k$ để $d$ tiếp xúc với $(P)$.", 
             options: ["A. $k = -4$ hoặc $k = 0$", "B. $k = 2$", "C. $k = 4$", "D. $k = -2$"], 
             answer: "A", 
-            explanation: "Phương trình đường thẳng $d: y = kx + 1$. PT hoành độ giao điểm: $x^2 - (4+k)x + 2 = 0$. Tiếp xúc khi $\Delta = (4+k)^2 - 8 = 0 \Leftrightarrow 4+k = \pm \sqrt{8}$. (Xem lại dữ kiện nguồn: nếu đáp án là 0 và -4 thì PT phải là $x^2 - (4+k)x + 4 = 0$, tương ứng $c=3$ và qua $A(0;-1)$)."
+            explanation: "Phương trình đường thẳng $d: y = kx + 1$. PT hoành độ giao điểm: $x^2 - (4+k)x + 2 = 0$. Tiếp xúc khi $\\Delta = (4+k)^2 - 8 = 0 \\Leftrightarrow 4+k = \\pm \\sqrt{8}$. (Xem lại dữ kiện nguồn: nếu đáp án là 0 và -4 thì PT phải là $x^2 - (4+k)x + 4 = 0$, tương ứng $c=3$ và qua $A(0;-1)$)."
         },
         { 
             question: "Diện tích của hình chữ nhật có chu vi $16cm$ đạt giá trị lớn nhất là:", 
             options: ["A. $32 cm^2$", "B. $16 cm^2$", "C. $64 cm^2$", "D. $20 cm^2$"], 
             answer: "B", 
-            explanation: "Chu vi $16 \Rightarrow$ tổng hai cạnh là 8. Gọi cạnh là $x$ và $8-x$. Diện tích $S = x(8-x) = -x^2 + 8x$. Đây là hàm bậc hai đạt cực đại tại $x = 4$. Khi đó $S = 4 \cdot 4 = 16 cm^2$."
+            explanation: "Chu vi $16 \\Rightarrow$ tổng hai cạnh là 8. Gọi cạnh là $x$ và $8-x$. Diện tích $S = x(8-x) = -x^2 + 8x$. Đây là hàm bậc hai đạt cực đại tại $x = 4$. Khi đó $S = 4 \\cdot 4 = 16 cm^2$."
         },
         { 
             question: "Parabol $y = ax^2 + bx + c$ cắt trục tung tại $(0; 4)$ và cắt trục hoành tại $(1; 0), (4; 0)$. Đỉnh của Parabol có tung độ là:", 
             options: ["A. -2,25", "B. -2", "C. -2,5", "D. -1,5"], 
             answer: "A", 
-            explanation: "Qua $(1;0), (4;0) \Rightarrow y = a(x-1)(x-4)$. Qua $(0;4) \Rightarrow 4 = a(-1)(-4) \Rightarrow a=1$. Hàm số $y = x^2 - 5x + 4$. Đỉnh $x_I = 2,5 \Rightarrow y_I = (2,5)^2 - 5(2,5) + 4 = -2,25$."
+            explanation: "Qua $(1;0), (4;0) \\Rightarrow y = a(x-1)(x-4)$. Qua $(0;4) \\Rightarrow 4 = a(-1)(-4) \\Rightarrow a=1$. Hàm số $y = x^2 - 5x + 4$. Đỉnh $x_I = 2,5 \\Rightarrow y_I = (2,5)^2 - 5(2,5) + 4 = -2,25$."
         },
         { 
             question: "Xác định hàm số có đồ thị đối xứng với đồ thị hàm số $y = x^2 - 4x + 3$ qua trục hoành.", 
             options: ["A. $y = -x^2 + 4x - 3$", "B. $y = -x^2 - 4x - 3$", "C. $y = 1,5x^2 - 4x + 3$", "D. $y = -x^2 + 4x + 3$"], 
             answer: "A", 
-            explanation: "Đối xứng qua trục hoành biến điểm $(x; y)$ thành $(x; -y)$. Thay vào phương trình: $-y = x^2 - 4x + 3 \Leftrightarrow y = -x^2 + 4x - 3$."
+            explanation: "Đối xứng qua trục hoành biến điểm $(x; y)$ thành $(x; -y)$. Thay vào phương trình: $-y = x^2 - 4x + 3 \\Leftrightarrow y = -x^2 + 4x - 3$."
         },
         { 
             question: "Tìm $m$ để giá trị nhỏ nhất của hàm số $y = x^2 - 4x + m + 1$ trên $\\mathbb{R}$ bằng $5$.", 
             options: ["A. $m = 4$", "B. $m = 8$", "C. $m = 9$", "D. $m = 5$"], 
             answer: "B", 
-            explanation: "Giá trị nhỏ nhất đạt tại đỉnh $x = 2$. $y(2) = 2^2 - 4(2) + m + 1 = m - 3$. Theo đề bài $m - 3 = 5 \Leftrightarrow m = 8$."
+            explanation: "Giá trị nhỏ nhất đạt tại đỉnh $x = 2$. $y(2) = 2^2 - 4(2) + m + 1 = m - 3$. Theo đề bài $m - 3 = 5 \\Leftrightarrow m = 8$."
         },
         { 
             question: "Cho hàm số $y = x^2 - 2x + 3$. Tìm tọa độ điểm $M$ trên đồ thị sao cho tung độ của $M$ bằng 2 lần hoành độ của $M$.", 
             options: ["A. $(1; 2)$ và $(3; 6)$", "B. $(1; 2)$", "C. $(3; 6)$", "D. $(0; 3)$"], 
             answer: "A", 
-            explanation: "Giải phương trình $2x = x^2 - 2x + 3 \Leftrightarrow x^2 - 4x + 3 = 0 \Leftrightarrow x=1$ hoặc $x=3$. Các điểm tương ứng là $(1; 2)$ và $(3; 6)$."
+            explanation: "Giải phương trình $2x = x^2 - 2x + 3 \\Leftrightarrow x^2 - 4x + 3 = 0 \\Leftrightarrow x=1$ hoặc $x=3$. Các điểm tương ứng là $(1; 2)$ và $(3; 6)$."
         },
         { 
             question: "Một rào chắn hình Parabol cao $2m$, chân rào cách nhau $4m$. Một vật thể hình trụ muốn đi qua rào chắn. Nếu vật cao $1,5m$ thì chiều rộng tối đa của vật là:", 
             options: ["A. $2m$", "B. $1,8m$", "C. $1,5m$", "D. $1,2m$"], 
             answer: "A", 
-            explanation: "Chọn đỉnh rào là $I(0; 2)$, chân rào là $(-2; 0), (2; 0)$. Parabol $y = -0,5x^2 + 2$. Với $y = 1,5 \Rightarrow 1,5 = -0,5x^2 + 2 \Rightarrow 0,5x^2 = 0,5 \Rightarrow x = \\pm 1$. Chiều rộng tối đa là $1 - (-1) = 2m$."
+            explanation: "Chọn đỉnh rào là $I(0; 2)$, chân rào là $(-2; 0), (2; 0)$. Parabol $y = -0,5x^2 + 2$. Với $y = 1,5 \\Rightarrow 1,5 = -0,5x^2 + 2 \\Rightarrow 0,5x^2 = 0,5 \\Rightarrow x = \\pm 1$. Chiều rộng tối đa là $1 - (-1) = 2m$."
         },
         { 
             question: "Tìm tập hợp các giá trị $x$ để hàm số $y = -x^2 + 4x - 3$ nhận giá trị không âm.", 
@@ -948,19 +948,19 @@ const questionPool = {
             question: "Tìm hàm số bậc hai $y = ax^2 + bx + c$ có đồ thị đi qua $A(1; 0)$ và có đỉnh $I(-1; 4)$.", 
             options: ["A. $y = -x^2 - 2x + 3$", "B. $y = -x^2 + 2x + 3$", "C. $y = x^2 + 2x - 3$", "D. $y = -2x^2 - 4x + 2$"], 
             answer: "A", 
-            explanation: "Dạng đỉnh $y = a(x+1)^2 + 4$. Qua $A(1; 0) \Rightarrow 0 = a(1+1)^2 + 4 \Rightarrow 4a = -4 \Rightarrow a = -1$. Vậy $y = -(x+1)^2 + 4 = -x^2 - 2x + 3$."
+            explanation: "Dạng đỉnh $y = a(x+1)^2 + 4$. Qua $A(1; 0) \\Rightarrow 0 = a(1+1)^2 + 4 \\Rightarrow 4a = -4 \\Rightarrow a = -1$. Vậy $y = -(x+1)^2 + 4 = -x^2 - 2x + 3$."
         },
         { 
             question: "Cho Parabol $y = x^2 - 3x + 2$. Gọi $A, B$ là giao điểm của $(P)$ với $Ox$. Điểm $C$ trên $(P)$ có hoành độ $x=3$. Diện tích tam giác $ABC$ là:", 
             options: ["A. 1", "B. 2", "C. 1,5", "D. 3"], 
             answer: "A", 
-            explanation: "Giao điểm $Ox$ là $A(1; 0), B(2; 0) \Rightarrow AB = 1$. Điểm $C(3; f(3)) = (3; 2)$. Chiều cao tam giác từ $C$ đến $Ox$ là $h = 2$. Diện tích $S = 1/2 \cdot 1 \cdot 2 = 1$."
+            explanation: "Giao điểm $Ox$ là $A(1; 0), B(2; 0) \\Rightarrow AB = 1$. Điểm $C(3; f(3)) = (3; 2)$. Chiều cao tam giác từ $C$ đến $Ox$ là $h = 2$. Diện tích $S = 1/2 \\cdot 1 \\cdot 2 = 1$."
         },
         { 
             question: "Xác định Parabol $(P): y = ax^2 + bx + c$ biết nó đi qua $A(0; 1), B(1; 4), C(-1; 0)$.", 
             options: ["A. $y = 2x^2 + 2x + 1$", "B. $y = x^2 + 2x + 1$", "C. $y = 2x^2 + x + 1$", "D. $y = x^2 - 2x + 1$"], 
             answer: "A", 
-            explanation: "Qua $(0; 1) \Rightarrow c=1$. Qua $(1; 4) \Rightarrow a+b+1=4 \Rightarrow a+b=3$. Qua $(-1; 0) \Rightarrow a-b+1=0 \Rightarrow a-b=-1$. Giải hệ được $a=1, b=2$. Vậy $y = x^2 + 2x + 1$."
+            explanation: "Qua $(0; 1) \\Rightarrow c=1$. Qua $(1; 4) \\Rightarrow a+b+1=4 \\Rightarrow a+b=3$. Qua $(-1; 0) \\Rightarrow a-b+1=0 \\Rightarrow a-b=-1$. Giải hệ được $a=1, b=2$. Vậy $y = x^2 + 2x + 1$."
         },
         { 
             question: "Khoảng cách từ đỉnh của Parabol $y = x^2 - 6x + 10$ đến trục hoành là:", 
@@ -972,7 +972,7 @@ const questionPool = {
             question: "Tìm $b$ để Parabol $y = x^2 + bx + 3$ cắt trục hoành tại hai điểm phân biệt có hoành độ dương.", 
             options: ["A. $b < -2\\sqrt{3}$", "B. $b > 2\\sqrt{3}$", "C. $-2\\sqrt{3} < b < 2\\sqrt{3}$", "D. $b < 0$"], 
             answer: "A", 
-            explanation: "Điều kiện: 1) $\\Delta > 0 \Rightarrow b^2 - 12 > 0 \Rightarrow b > \\sqrt{12}$ hoặc $b < -\\sqrt{12}$. 2) $x_1+x_2 = -b > 0 \Rightarrow b < 0$. 3) $x_1x_2 = 3 > 0$ (luôn đúng). Kết hợp lại ta có $b < -2\\sqrt{3}$."
+            explanation: "Điều kiện: 1) $\\Delta > 0 \\Rightarrow b^2 - 12 > 0 \\Rightarrow b > \\sqrt{12}$ hoặc $b < -\\sqrt{12}$. 2) $x_1+x_2 = -b > 0 \\Rightarrow b < 0$. 3) $x_1x_2 = 3 > 0$ (luôn đúng). Kết hợp lại ta có $b < -2\\sqrt{3}$."
         }
     ],
     9: [
@@ -1102,7 +1102,7 @@ const questionPool = {
             question: "Cho hàm số $y = ax^2 + bx + c$ có đồ thị như hình vẽ. Biết $a > 0$, đỉnh nằm ở góc phần tư thứ III và cắt trục tung tại điểm có tung độ âm. Khẳng định nào sau đây là đúng?", 
             options: ["A. $b < 0, c > 0$", "B. $b > 0, c < 0$", "C. $b < 0, c < 0$", "D. $b > 0, c > 0$"], 
             answer: "B", 
-            explanation: "1) Đồ thị cắt trục tung tại điểm âm $\Rightarrow c < 0$. 2) Đỉnh ở góc phần tư III $\Rightarrow x_I < 0$. Mà $x_I = -b/2a < 0$, vì $a > 0$ nên $-b < 0 \Rightarrow b > 0$. Vậy $b > 0, c < 0$."
+            explanation: "1) Đồ thị cắt trục tung tại điểm âm $\\Rightarrow c < 0$. 2) Đỉnh ở góc phần tư III $\\Rightarrow x_I < 0$. Mà $x_I = -b/2a < 0$, vì $a > 0$ nên $-b < 0 \\Rightarrow b > 0$. Vậy $b > 0, c < 0$."
         },
         { 
             question: "Một chiếc cầu vòm có dạng Parabol với khoảng cách giữa hai chân cầu trên mặt nước là $100m$. Tại vị trí cách chân cầu $20m$ theo phương ngang, độ cao của cầu so với mặt nước là $12m$. Chiều cao lớn nhất của cầu vòm đó là:", 
@@ -1114,7 +1114,7 @@ const questionPool = {
             question: "Tìm giá trị của $c$ để Parabol $y = x^2 - 4x + c$ cắt trục hoành tại hai điểm $A, B$ sao cho $OA = 3OB$ (biết $A, B$ nằm cùng phía so với gốc tọa độ $O$).", 
             options: ["A. $c = 4$", "B. $c = -3$", "C. $c = 3$", "D. $c = 1$"], 
             answer: "C", 
-            explanation: "Giả sử $x_1 = 3x_2$. Theo định lý Vi-ét: $x_1 + x_2 = 4 \Rightarrow 4x_2 = 4 \Rightarrow x_2 = 1$. Suy ra $x_1 = 3$. Khi đó $c = x_1 \cdot x_2 = 1 \\cdot 3 = 3$."
+            explanation: "Giả sử $x_1 = 3x_2$. Theo định lý Vi-ét: $x_1 + x_2 = 4 \\Rightarrow 4x_2 = 4 \\Rightarrow x_2 = 1$. Suy ra $x_1 = 3$. Khi đó $c = x_1 \\cdot x_2 = 1 \\cdot 3 = 3$."
         },
         { 
             question: "Một người nông dân có $60m$ lưới để rào một khu vườn hình chữ nhật sát một bức tường thẳng (không cần rào cạnh sát tường). Diện tích lớn nhất mà khu vườn có thể đạt được là:", 
@@ -1132,31 +1132,31 @@ const questionPool = {
             question: "Diện tích của tam giác tạo bởi đỉnh của Parabol $y = x^2 - 6x + 5$ và hai giao điểm của nó với trục hoành là:", 
             options: ["A. 8", "B. 16", "C. 4", "D. 12"], 
             answer: "A", 
-            explanation: "Giao điểm $Ox$ là $A(1; 0)$ và $B(5; 0) \Rightarrow AB = 4$. Đỉnh là $I(3; -4)$, khoảng cách từ $I$ đến $Ox$ là $h = 4$. Diện tích $S = 1/2 \\cdot 4 \\cdot 4 = 8$."
+            explanation: "Giao điểm $Ox$ là $A(1; 0)$ và $B(5; 0) \\Rightarrow AB = 4$. Đỉnh là $I(3; -4)$, khoảng cách từ $I$ đến $Ox$ là $h = 4$. Diện tích $S = 1/2 \\cdot 4 \\cdot 4 = 8$."
         },
         { 
             question: "Tìm $b, c$ để Parabol $y = x^2 + bx + c$ có đỉnh thuộc đường thẳng $y = -1$ và cắt trục tung tại điểm $(0; 3)$.", 
             options: ["A. $b = 4, c = 3$", "B. $b = \\pm 4, c = 3$", "C. $b = -4, c = 3$", "D. $b = 2, c = 3$"], 
             answer: "B", 
-            explanation: "Cắt trục tung tại $(0; 3) \Rightarrow c = 3$. Tung độ đỉnh $y_I = -\\Delta/4a = -(b^2 - 12)/4 = -1 \Rightarrow b^2 - 12 = 4 \Rightarrow b^2 = 16 \Rightarrow b = \\pm 4$."
+            explanation: "Cắt trục tung tại $(0; 3) \\Rightarrow c = 3$. Tung độ đỉnh $y_I = -\\Delta/4a = -(b^2 - 12)/4 = -1 \\Rightarrow b^2 - 12 = 4 \\Rightarrow b^2 = 16 \\Rightarrow b = \\pm 4$."
         },
         { 
             question: "Hàm số nào dưới đây có đồ thị đối xứng với Parabol $y = x^2 - 4x + 3$ qua đường thẳng $y = 0$ (trục hoành)?", 
             options: ["A. $y = -x^2 - 4x - 3$", "B. $y = x^2 + 4x + 3$", "C. $y = -x^2 + 4x - 3$", "D. $y = -x^2 + 4x + 3$"], 
             answer: "C", 
-            explanation: "Đối xứng qua trục hoành biến $y$ thành $-y$. Ta có: $-y = x^2 - 4x + 3 \Leftrightarrow y = -x^2 + 4x - 3$."
+            explanation: "Đối xứng qua trục hoành biến $y$ thành $-y$. Ta có: $-y = x^2 - 4x + 3 \\Leftrightarrow y = -x^2 + 4x - 3$."
         },
         { 
             question: "Tìm giá trị của $m$ để giá trị nhỏ nhất của hàm số $y = x^2 - 4x + m$ trên đoạn $[0; 3]$ bằng $1$.", 
             options: ["A. $m = 5$", "B. $m = 1$", "C. $m = 3$", "D. $m = 4$"], 
             answer: "A", 
-            explanation: "Đỉnh $x = 2$ nằm trong đoạn $[0; 3]$. Giá trị nhỏ nhất là $f(2) = 2^2 - 4(2) + m = m - 4$. Theo đề $m - 4 = 1 \Rightarrow m = 5$."
+            explanation: "Đỉnh $x = 2$ nằm trong đoạn $[0; 3]$. Giá trị nhỏ nhất là $f(2) = 2^2 - 4(2) + m = m - 4$. Theo đề $m - 4 = 1 \\Rightarrow m = 5$."
         },
         { 
             question: "Xác định hàm số bậc hai $y = ax^2 + bx + c$ biết đồ thị đối xứng với Parabol $y = x^2$ qua điểm $M(1; 1)$.", 
             options: ["A. $y = -x^2 + 2x + 2$", "B. $y = -x^2 + 4x$", "C. $y = -x^2 + 4x - 2$", "D. $y = x^2 - 4x + 4$"], 
             answer: "B", 
-            explanation: "Phép đối xứng qua $M(1;1)$ biến $(x; y)$ thành $(2-x; 2-y)$. Thay vào $y=x^2$: $2-y = (2-x)^2 \Rightarrow 2-y = 4 - 4x + x^2 \Rightarrow y = -x^2 + 4x - 2$."
+            explanation: "Phép đối xứng qua $M(1;1)$ biến $(x; y)$ thành $(2-x; 2-y)$. Thay vào $y=x^2$: $2-y = (2-x)^2 \\Rightarrow 2-y = 4 - 4x + x^2 \\Rightarrow y = -x^2 + 4x - 2$."
         },
         { 
             question: "Một máng nước có mặt cắt hình Parabol. Khi đổ nước vào đến độ cao $10cm$ thì mặt nước rộng $20cm$. Nếu mặt nước rộng $30cm$ thì độ cao của nước là:", 
@@ -1198,7 +1198,7 @@ const questionPool = {
             question: "Tìm $c$ để Parabol $y = x^2 - 2x + c$ cắt trục hoành tại hai điểm phân biệt có hoành độ âm.", 
             options: ["A. Không tồn tại $c$", "B. $c < 1$", "C. $c < 0$", "D. $c > 1$"], 
             answer: "A", 
-            explanation: "Để có hoành độ âm $\Rightarrow$ tổng $S = -b/a = 2 < 0$ (Vô lý). Vậy không thể có hai nghiệm cùng âm khi $b=-2, a=1$."
+            explanation: "Để có hoành độ âm $\\Rightarrow$ tổng $S = -b/a = 2 < 0$ (Vô lý). Vậy không thể có hai nghiệm cùng âm khi $b=-2, a=1$."
         },
         { 
             question: "Hàm số $y = x^2 - mx + 1$ đạt giá trị nhỏ nhất bằng $-3$ khi giá trị của $m$ là:", 
@@ -1210,7 +1210,7 @@ const questionPool = {
             question: "Cho Parabol $y = x^2 - 4x + 3$. Có bao nhiêu điểm trên đồ thị mà hoành độ và tung độ là hai số đối nhau?", 
             options: ["A. 2 điểm", "B. 1 điểm", "C. 0 điểm", "D. 3 điểm"], 
             answer: "A", 
-            explanation: "Hai số đối nhau $\Rightarrow y = -x$. Thay vào hàm số: $-x = x^2 - 4x + 3 \\Leftrightarrow x^2 - 3x + 3 = 0$. Kiểm tra $\\Delta = 9 - 12 = -3 < 0$. Không có điểm nào thỏa mãn. (Xem lại đáp án nguồn)."
+            explanation: "Hai số đối nhau $\\Rightarrow y = -x$. Thay vào hàm số: $-x = x^2 - 4x + 3 \\Leftrightarrow x^2 - 3x + 3 = 0$. Kiểm tra $\\Delta = 9 - 12 = -3 < 0$. Không có điểm nào thỏa mãn. (Xem lại đáp án nguồn)."
         },
         { 
             question: "Khoảng cách từ đỉnh của Parabol $y = x^2 - 2x + 5$ đến đường thẳng $y = x$ là:", 
@@ -1248,7 +1248,7 @@ const questionPool = {
             question: "Cho hàm số $f(x) = x^2 - 2x + 3$. Số nghiệm của phương trình $|f(x)| = 4$ là:", 
             options: ["A. $1$", "B. $0$", "C. $2$", "D. $4$"], 
             answer: "C", 
-            explanation: "Đỉnh của $f(x)$ là $I(1; 2)$. Vì $a = 1 > 0$ nên $f(x) \\geq 2$ với mọi $x$. Phương trình $|f(x)| = 4$ tương đương với $f(x) = 4$ (vì $f(x) \geq 2 > -4$). $x^2 - 2x + 3 = 4 \\Leftrightarrow x^2 - 2x - 1 = 0$. Phương trình này có $\\Delta' = 1 + 1 = 2 > 0$ nên có 2 nghiệm phân biệt."
+            explanation: "Đỉnh của $f(x)$ là $I(1; 2)$. Vì $a = 1 > 0$ nên $f(x) \\geq 2$ với mọi $x$. Phương trình $|f(x)| = 4$ tương đương với $f(x) = 4$ (vì $f(x) \\geq 2 > -4$). $x^2 - 2x + 3 = 4 \\Leftrightarrow x^2 - 2x - 1 = 0$. Phương trình này có $\\Delta' = 1 + 1 = 2 > 0$ nên có 2 nghiệm phân biệt."
         },
         { 
             question: "Tìm $c$ để Parabol $y = x^2 - 4x + c$ cắt trục hoành tại hai điểm phân biệt $A, B$ sao cho $OA^2 + OB^2 = 20$.", 
@@ -1590,31 +1590,31 @@ const questionPool = {
             question: "Một chiếc cầu vòm có dạng Parabol với chiều ngang mặt nước là $120m$, chiều cao cao nhất của vòm cầu so với mặt nước là $15m$. Người ta xây dựng hai trụ cầu phụ cách tâm cầu mỗi bên $20m$. Chiều cao của hai trụ cầu phụ này là:", 
             options: ["A. $12m$", "B. $13,33m$", "C. $14m$", "D. $10,5m$"], 
             answer: "B", 
-            explanation: "Chọn gốc tọa độ tại tâm mặt nước, đỉnh cầu là $I(0; 15)$, chân cầu là $(\\pm 60; 0)$. Parabol có dạng $y = ax^2 + 15$. Đi qua $(60; 0) \Rightarrow 0 = a \\cdot 60^2 + 15 \Rightarrow a = -1/240$. Tại vị trí cách tâm $20m$ ($x=20$), chiều cao trụ là $y = -1/240 \cdot 20^2 + 15 = -400/240 + 15 = -5/3 + 15 = 40/3 \approx 13,33m$."
+            explanation: "Chọn gốc tọa độ tại tâm mặt nước, đỉnh cầu là $I(0; 15)$, chân cầu là $(\\pm 60; 0)$. Parabol có dạng $y = ax^2 + 15$. Đi qua $(60; 0) \\Rightarrow 0 = a \\cdot 60^2 + 15 \\Rightarrow a = -1/240$. Tại vị trí cách tâm $20m$ ($x=20$), chiều cao trụ là $y = -1/240 \\cdot 20^2 + 15 = -400/240 + 15 = -5/3 + 15 = 40/3 \\approx 13,33m$."
         },
         { 
             question: "Cho hàm số $y = x^2 - 4x + 3$. Gọi $d$ là đường thẳng đi qua $M(0; -1)$ và có hệ số góc $k$. Tìm $k$ để đường thẳng $d$ tiếp xúc với đồ thị hàm số.", 
             options: ["A. $k = 0$ hoặc $k = -8$", "B. $k = 4$", "C. $k = -4$", "D. $k = 2$"], 
             answer: "A", 
-            explanation: "Phương trình đường thẳng $d: y = kx - 1$. Phương trình hoành độ giao điểm: $x^2 - (4+k)x + 4 = 0$. Tiếp xúc khi $\Delta = (k+4)^2 - 16 = 0 \Leftrightarrow k+4 = 4$ hoặc $k+4 = -4$. Suy ra $k = 0$ hoặc $k = -8$."
+            explanation: "Phương trình đường thẳng $d: y = kx - 1$. Phương trình hoành độ giao điểm: $x^2 - (4+k)x + 4 = 0$. Tiếp xúc khi $\\Delta = (k+4)^2 - 16 = 0 \\Leftrightarrow k+4 = 4$ hoặc $k+4 = -4$. Suy ra $k = 0$ hoặc $k = -8$."
         },
         { 
             question: "Một quả bóng được đá lên từ mặt đất với quỹ đạo $h(t) = -5t^2 + 20t$ ($h$ tính bằng mét, $t$ tính bằng giây). Quả bóng sẽ ở độ cao trên $15m$ trong khoảng thời gian bao lâu?", 
             options: ["A. $1s$", "B. $1,5s$", "C. $2s$", "D. $3s$"], 
             answer: "C", 
-            explanation: "Giải bất phương trình $-5t^2 + 20t > 15 \Leftrightarrow t^2 - 4t + 3 < 0 \Leftrightarrow 1 < t < 3$. Khoảng thời gian bóng ở trên độ cao $15m$ là $3 - 1 = 2$ giây."
+            explanation: "Giải bất phương trình $-5t^2 + 20t > 15 \\Leftrightarrow t^2 - 4t + 3 < 0 \\Leftrightarrow 1 < t < 3$. Khoảng thời gian bóng ở trên độ cao $15m$ là $3 - 1 = 2$ giây."
         },
         { 
             question: "Tìm giá trị của $m$ để đường thẳng $y = x + m$ cắt Parabol $y = x^2 - 2x + 3$ tại hai điểm $A, B$ sao cho tam giác $OAB$ có diện tích bằng $1,5$ ($O$ là gốc tọa độ).", 
             options: ["A. $m = 2$", "B. $m = 0$", "C. $m = 1$", "D. $m = -1$"], 
             answer: "C", 
-            explanation: "Phương trình hoành độ: $x^2 - 3x + 3 - m = 0$. Với $m=1 \Rightarrow x^2-3x+2=0 \Rightarrow A(1; 2), B(2; 3)$. Diện tích $S = 0,5 |x_A y_B - x_B y_A| = 0,5 |1 \cdot 3 - 2 \cdot 2| = 0,5 |-1| = 0,5$ (Kiểm tra lại dữ kiện: nếu $m=1$ diện tích là $0,5$, để diện tích bằng $1,5$ thì giá trị $m$ cần tính toán lại dựa trên công thức tọa độ)."
+            explanation: "Phương trình hoành độ: $x^2 - 3x + 3 - m = 0$. Với $m=1 \\Rightarrow x^2-3x+2=0 \\Rightarrow A(1; 2), B(2; 3)$. Diện tích $S = 0,5 |x_A y_B - x_B y_A| = 0,5 |1 \\cdot 3 - 2 \\cdot 2| = 0,5 |-1| = 0,5$ (Kiểm tra lại dữ kiện: nếu $m=1$ diện tích là $0,5$, để diện tích bằng $1,5$ thì giá trị $m$ cần tính toán lại dựa trên công thức tọa độ)."
         },
         { 
             question: "Cho Parabol $(P): y = ax^2 + bx + c$ cắt trục hoành tại hai điểm $A, B$. Biết đỉnh $I$ có tung độ $-4$ và tam giác $IAB$ là tam giác vuông cân tại $I$. Hệ số $a$ bằng:", 
             options: ["A. $1/4$", "B. $1/2$", "C. $1$", "D. $2$"], 
             answer: "A", 
-            explanation: "Vì tam giác $IAB$ vuông cân tại $I$ và đường cao từ $I$ đến $AB$ là $h = |y_I| = 4$, nên độ dài đáy $AB = 2h = 8$. Ta có $AB = \frac{\sqrt{\Delta}}{|a|} = 8$ và $y_I = \frac{-\Delta}{4a} = -4 \Rightarrow \Delta = 16a$. Thay vào: $16a/a^2 = 64 \Rightarrow 16/a = 64 \Rightarrow a = 1/4$."
+            explanation: "Vì tam giác $IAB$ vuông cân tại $I$ và đường cao từ $I$ đến $AB$ là $h = |y_I| = 4$, nên độ dài đáy $AB = 2h = 8$. Ta có $AB = \\frac{\\sqrt{\\Delta}}{|a|} = 8$ và $y_I = \\frac{-\\Delta}{4a} = -4 \\Rightarrow \\Delta = 16a$. Thay vào: $16a/a^2 = 64 \\Rightarrow 16/a = 64 \\Rightarrow a = 1/4$."
         },
         { 
             question: "Hàm số $y = ax^2 + bx + c$ đạt giá trị lớn nhất bằng $5$ tại $x = -2$ và đi qua điểm $M(1; -4)$. Giá trị biểu thức $a + b + c$ bằng:", 
@@ -1626,25 +1626,25 @@ const questionPool = {
             question: "Một khung hình chữ nhật có diện tích $S = 100 cm^2$. Để chu vi của khung hình này là nhỏ nhất thì độ dài các cạnh phải là:", 
             options: ["A. $5cm$ và $20cm$", "B. $10cm$ và $10cm$", "C. $2cm$ và $50cm$", "D. $4cm$ và $25cm$"], 
             answer: "B", 
-            explanation: "Theo bất đẳng thức AM-GM, với diện tích $S$ không đổi, chu vi $P = 2(a+b)$ nhỏ nhất khi $a=b$, tức là hình chữ nhật trở thành hình vuông. Với $S=100$, cạnh hình vuông là $\sqrt{100} = 10cm$."
+            explanation: "Theo bất đẳng thức AM-GM, với diện tích $S$ không đổi, chu vi $P = 2(a+b)$ nhỏ nhất khi $a=b$, tức là hình chữ nhật trở thành hình vuông. Với $S=100$, cạnh hình vuông là $\\sqrt{100} = 10cm$."
         },
         { 
             question: "Tìm các giá trị $b, c$ để Parabol $y = x^2 + bx + c$ có đỉnh $I$ nằm trên đường thẳng $y = -x$ và đi qua điểm $A(0; 2)$.", 
             options: ["A. $b = -1, c = 2$", "B. $b = 1, c = 2$", "C. $b = -4, c = 2$ hoặc $b = 2, c = 2$", "D. $b = -2, c = 2$"], 
             answer: "C", 
-            explanation: "Qua $A(0; 2) \Rightarrow c = 2$. Tọa độ đỉnh $I(-b/2; 2 - b^2/4)$. Để $I$ nằm trên $y = -x \Rightarrow 2 - b^2/4 = -(-b/2) = b/2 \Leftrightarrow 8 - b^2 = 2b \Leftrightarrow b^2 + 2b - 8 = 0 \Leftrightarrow b = 2$ hoặc $b = -4$."
+            explanation: "Qua $A(0; 2) \\Rightarrow c = 2$. Tọa độ đỉnh $I(-b/2; 2 - b^2/4)$. Để $I$ nằm trên $y = -x \\Rightarrow 2 - b^2/4 = -(-b/2) = b/2 \\Leftrightarrow 8 - b^2 = 2b \\Leftrightarrow b^2 + 2b - 8 = 0 \\Leftrightarrow b = 2$ hoặc $b = -4$."
         },
         { 
             question: "Cho hàm số $y = f(x) = x^2 - 4x + 3$. Số nghiệm của phương trình $f(x^2 - 2x + 1) = 0$ là:", 
             options: ["A. $2$", "B. $3$", "C. $4$", "D. $0$"], 
             answer: "C", 
-            explanation: "Đặt $t = x^2 - 2x + 1 = (x-1)^2 \geq 0$. Phương trình $f(t) = 0 \Leftrightarrow t^2 - 4t + 3 = 0 \Leftrightarrow t = 1$ hoặc $t = 3$. Với $t=1 \Rightarrow (x-1)^2 = 1 \Rightarrow x=0, x=2$. Với $t=3 \Rightarrow (x-1)^2 = 3 \Rightarrow x = 1 \pm \sqrt{3}$. Vậy có tất cả 4 nghiệm phân biệt."
+            explanation: "Đặt $t = x^2 - 2x + 1 = (x-1)^2 \\geq 0$. Phương trình $f(t) = 0 \\Leftrightarrow t^2 - 4t + 3 = 0 \\Leftrightarrow t = 1$ hoặc $t = 3$. Với $t=1 \\Rightarrow (x-1)^2 = 1 \\Rightarrow x=0, x=2$. Với $t=3 \\Rightarrow (x-1)^2 = 3 \\Rightarrow x = 1 \\pm \\sqrt{3}$. Vậy có tất cả 4 nghiệm phân biệt."
         },
         { 
             question: "Một đường hầm có mặt cắt là một Parabol cao $6m$ và rộng $8m$. Một xe tải chở hàng cao $4m$ đi vào chính giữa hầm. Để xe không chạm tường hầm, chiều rộng tối đa của xe tải là:", 
             options: ["A. $4,62m$", "B. $3,28m$", "C. $5,12m$", "D. $2,4m$"], 
             answer: "A", 
-            explanation: "Chọn gốc tọa độ tại trung điểm chân hầm, Parabol qua $(\pm 4; 0)$ và đỉnh $(0; 6)$ nên $y = -0,375x^2 + 6$. Xe cao $4m \Rightarrow 4 = -0,375x^2 + 6 \Rightarrow 0,375x^2 = 2 \Rightarrow x^2 = 16/3 \Rightarrow x \approx \pm 2,31$. Chiều rộng xe là $2|x| \approx 4,62m$."
+            explanation: "Chọn gốc tọa độ tại trung điểm chân hầm, Parabol qua $(\\pm 4; 0)$ và đỉnh $(0; 6)$ nên $y = -0,375x^2 + 6$. Xe cao $4m \\Rightarrow 4 = -0,375x^2 + 6 \\Rightarrow 0,375x^2 = 2 \\Rightarrow x^2 = 16/3 \\Rightarrow x \\approx \\pm 2,31$. Chiều rộng xe là $2|x| \\approx 4,62m$."
         },
         { 
             question: "Cho Parabol $y = ax^2 + bx + c$ đi qua $A(0; -1), B(1; -1)$ và $C(-1; 1)$. Khoảng cách từ đỉnh $I$ của Parabol đến trục hoành là:", 
@@ -1662,31 +1662,31 @@ const questionPool = {
             question: "Diện tích tam giác được tạo bởi đỉnh và hai giao điểm với trục hoành của đồ thị hàm số $y = -x^2 + 2x + 3$ là:", 
             options: ["A. $8$", "B. $4$", "C. $12$", "D. $6$"], 
             answer: "A", 
-            explanation: "Giao điểm với $Ox$ là $A(-1; 0)$ và $B(3; 0) \Rightarrow AB = 4$. Đỉnh $I(1; 4)$, chiều cao tam giác là $h = |y_I| = 4$. Diện tích $S = 1/2 \cdot 4 \cdot 4 = 8$."
+            explanation: "Giao điểm với $Ox$ là $A(-1; 0)$ và $B(3; 0) \\Rightarrow AB = 4$. Đỉnh $I(1; 4)$, chiều cao tam giác là $h = |y_I| = 4$. Diện tích $S = 1/2 \\cdot 4 \\cdot 4 = 8$."
         },
         { 
-            question: "Cho Parabol $y = ax^2 + bx + c$ có đỉnh $I(1; 4)$ và đi qua điểm $A(3; 0)$. Giá trị của tích $a \cdot b \cdot c$ bằng:", 
+            question: "Cho Parabol $y = ax^2 + bx + c$ có đỉnh $I(1; 4)$ và đi qua điểm $A(3; 0)$. Giá trị của tích $a \\cdot b \\cdot c$ bằng:", 
             options: ["A. $12$", "B. $6$", "C. $-12$", "D. $-6$"], 
             answer: "C", 
-            explanation: "Dạng đỉnh $y = a(x-1)^2 + 4$. Qua $(3; 0) \Rightarrow 0 = a(3-1)^2 + 4 \Rightarrow 4a = -4 \Rightarrow a = -1$. Hàm số là $y = -(x-1)^2 + 4 = -x^2 + 2x + 3$. Khi đó $a=-1, b=2, c=3 \Rightarrow abc = -6$? (Kiểm tra lại: $a \cdot b \cdot c = -1 \cdot 2 \cdot 3 = -6$. Nếu kết quả là -12, có thể đề bài yêu cầu tích khác)."
+            explanation: "Dạng đỉnh $y = a(x-1)^2 + 4$. Qua $(3; 0) \\Rightarrow 0 = a(3-1)^2 + 4 \\Rightarrow 4a = -4 \\Rightarrow a = -1$. Hàm số là $y = -(x-1)^2 + 4 = -x^2 + 2x + 3$. Khi đó $a=-1, b=2, c=3 \\Rightarrow abc = -6$? (Kiểm tra lại: $a \\cdot b \\cdot c = -1 \\cdot 2 \\cdot 3 = -6$. Nếu kết quả là -12, có thể đề bài yêu cầu tích khác)."
         },
         { 
-            question: "Hàm số $y = x^2 - 4x + 3$ đồng biến trên khoảng $(m; +\infty)$. Giá trị nhỏ nhất của số thực $m$ để khẳng định trên luôn đúng là:", 
+            question: "Hàm số $y = x^2 - 4x + 3$ đồng biến trên khoảng $(m; +\\infty)$. Giá trị nhỏ nhất của số thực $m$ để khẳng định trên luôn đúng là:", 
             options: ["A. $m = 1$", "B. $m = 0$", "C. $m = 3$", "D. $m = 2$"], 
             answer: "D", 
-            explanation: "Hàm số bậc hai đồng biến trên $[ -b/2a; +\infty)$ nếu $a > 0$. Ở đây $a=1, -b/2a = 2$. Vậy hàm số đồng biến trên $[2; +\infty)$. Để đồng biến trên $(m; +\infty)$ thì $(m; +\infty) \subset [2; +\infty) \Rightarrow m \geq 2$. Giá trị nhỏ nhất là $2$."
+            explanation: "Hàm số bậc hai đồng biến trên $[ -b/2a; +\\infty)$ nếu $a > 0$. Ở đây $a=1, -b/2a = 2$. Vậy hàm số đồng biến trên $[2; +\\infty)$. Để đồng biến trên $(m; +\\infty)$ thì $(m; +\\infty) \\subset [2; +\\infty) \\Rightarrow m \\geq 2$. Giá trị nhỏ nhất là $2$."
         },
         { 
             question: "Tìm $c$ để Parabol $y = x^2 - 4x + c$ cắt trục hoành tại hai điểm $A, B$ sao cho độ dài đoạn $AB$ gấp đôi khoảng cách từ đỉnh $I$ đến trục hoành.", 
             options: ["A. $c = 3$ hoặc $c = 4$", "B. $c = 2$", "C. $c = 4$", "D. $c = 3$"], 
             answer: "D", 
-            explanation: "Khoảng cách từ đỉnh đến $Ox$ là $h = |y_I| = |c-4|$. Độ dài $AB = \sqrt{\Delta} = \sqrt{16-4c} = 2\sqrt{4-c}$. Yêu cầu $2\sqrt{4-c} = 2|c-4| = 2(4-c)$ (vì phải có $\Delta > 0 \Rightarrow c < 4$). Bình phương: $4-c = (4-c)^2 \Rightarrow 4-c = 1 \Rightarrow c = 3$ (loại $c=4$ vì khi đó không có 2 điểm phân biệt)."
+            explanation: "Khoảng cách từ đỉnh đến $Ox$ là $h = |y_I| = |c-4|$. Độ dài $AB = \\sqrt{\\Delta} = \\sqrt{16-4c} = 2\\sqrt{4-c}$. Yêu cầu $2\\sqrt{4-c} = 2|c-4| = 2(4-c)$ (vì phải có $\\Delta > 0 \\Rightarrow c < 4$). Bình phương: $4-c = (4-c)^2 \\Rightarrow 4-c = 1 \\Rightarrow c = 3$ (loại $c=4$ vì khi đó không có 2 điểm phân biệt)."
         },
         { 
             question: "Một ngọn núi có mặt cắt ngang dạng Parabol cao $500m$ và chân núi rộng $2000m$. Một người leo núi đang ở độ cao $300m$. Khoảng cách theo phương ngang của người đó đến tâm ngọn núi là:", 
-            options: ["A. $400m$", "B. $632m$", "C. $200\sqrt{10}m$", "D. $500m$"], 
+            options: ["A. $400m$", "B. $632m$", "C. $200\\sqrt{10}m$", "D. $500m$"], 
             answer: "C", 
-            explanation: "Chọn đỉnh núi là $I(0; 500)$, chân núi là $(\pm 1000; 0)$. Parabol $y = -0,0005x^2 + 500$. Người ở độ cao $300m \Rightarrow 300 = -0,0005x^2 + 500 \Rightarrow 0,0005x^2 = 200 \Rightarrow x^2 = 400.000 \Rightarrow x = \pm 200\sqrt{10} \approx 632,5m$."
+            explanation: "Chọn đỉnh núi là $I(0; 500)$, chân núi là $(\\pm 1000; 0)$. Parabol $y = -0,0005x^2 + 500$. Người ở độ cao $300m \\Rightarrow 300 = -0,0005x^2 + 500 \\Rightarrow 0,0005x^2 = 200 \\Rightarrow x^2 = 400.000 \\Rightarrow x = \\pm 200\\sqrt{10} \\approx 632,5m$."
         },
         { 
             question: "Cho hàm số $y = x^2 - 2x + 3$. Tọa độ điểm $M$ trên đồ thị sao cho độ dài bán kính véc-tơ $OM$ là ngắn nhất ($O$ là gốc tọa độ) là:", 
@@ -1698,13 +1698,13 @@ const questionPool = {
             question: "Xác định hàm số $y = ax^2 + bx + c$ biết nó đi qua $A(0; 1), B(1; 0)$ và tiếp xúc với đường thẳng $y = x$.", 
             options: ["A. $y = x^2 - 2x + 1$", "B. $y = 2x^2 - 3x + 1$", "C. $y = x^2 - x + 1$", "D. $y = -x^2 + 1$"], 
             answer: "B", 
-            explanation: "Qua $(0; 1) \Rightarrow c=1$. Qua $(1; 0) \Rightarrow a+b+1=0 \Rightarrow b = -a-1$. PT hoành độ với $y=x$: $ax^2 + (b-1)x + 1 = 0$. Tiếp xúc $\Rightarrow \Delta = (b-1)^2 - 4a = 0$. Thay $b=-a-1$ vào: $(-a-2)^2 - 4a = 0 \Rightarrow a^2 + 4a + 4 - 4a = 0 \Rightarrow a^2 = -4$ (Vô nghiệm thực). Kiểm tra lại đáp án: nếu $y = 2x^2 - 3x + 1$ thì tiếp xúc tại $x=1$ với $y=-x+1$..."
+            explanation: "Qua $(0; 1) \\Rightarrow c=1$. Qua $(1; 0) \\Rightarrow a+b+1=0 \\Rightarrow b = -a-1$. PT hoành độ với $y=x$: $ax^2 + (b-1)x + 1 = 0$. Tiếp xúc $\\Rightarrow \\Delta = (b-1)^2 - 4a = 0$. Thay $b=-a-1$ vào: $(-a-2)^2 - 4a = 0 \\Rightarrow a^2 + 4a + 4 - 4a = 0 \\Rightarrow a^2 = -4$ (Vô nghiệm thực). Kiểm tra lại đáp án: nếu $y = 2x^2 - 3x + 1$ thì tiếp xúc tại $x=1$ với $y=-x+1$..."
         },
         { 
             question: "Tìm $k$ để đường thẳng $y = kx$ cắt Parabol $y = x^2 - 4x + 3$ tại hai điểm $A, B$ sao cho trung điểm của đoạn $AB$ có hoành độ bằng $3$.", 
             options: ["A. $k = 1$", "B. $k = 4$", "C. $k = -2$", "D. $k = 2$"], 
             answer: "D", 
-            explanation: "Phương trình hoành độ giao điểm: $x^2 - (4+k)x + 3 = 0$. Hoành độ trung điểm $x_I = \frac{x_A + x_B}{2} = \frac{4+k}{2}$. Theo đề bài $\frac{4+k}{2} = 3 \Rightarrow k = 2$."
+            explanation: "Phương trình hoành độ giao điểm: $x^2 - (4+k)x + 3 = 0$. Hoành độ trung điểm $x_I = \\frac{x_A + x_B}{2} = \\frac{4+k}{2}$. Theo đề bài $\\frac{4+k}{2} = 3 \\Rightarrow k = 2$."
         }
     ],
     15: [
